@@ -1,0 +1,96 @@
+name: CI
+
+on:
+  push:
+    branches: [main, 'feat/**']
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  audit:
+    name: Validate · a11y · Lighthouse · links
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      # ---- 1. Markup -------------------------------------------------------
+      # Mirrors the local gate: npx html-validate index.html case-study.html
+      - name: html-validate
+        run: npx --yes html-validate index.html case-study.html
+
+      # ---- 2. Serve ---------------------------------------------------------
+      # tools/serve-gzip.py, not `python -m http.server`. The stdlib server does
+      # not compress, which costs ~3 Lighthouse performance points and makes the
+      # run disagree with production. GitHub Pages serves gzip.
+      - name: Start gzip static server
+        run: |
+          python3 tools/serve-gzip.py 4174 &
+          for i in $(seq 1 30); do
+            curl -sf -o /dev/null http://localhost:4174/ && break
+            sleep 1
+          done
+          curl -sI -H 'Accept-Encoding: gzip' http://localhost:4174/ | grep -qi 'content-encoding: gzip'
+
+      # ---- 3. Accessibility -------------------------------------------------
+      # Mirrors: npx @axe-core/cli <urls> --exit
+      - name: axe-core (0 serious+ required)
+        run: |
+          npx --yes @axe-core/cli \
+            http://localhost:4174/ \
+            http://localhost:4174/case-study.html \
+            --exit --save axe-report.json
+
+      # ---- 4. Lighthouse ----------------------------------------------------
+      # Budgets in lighthouserc.json. Mobile is the default form factor.
+      - name: Lighthouse CI
+        run: npx --yes @lhci/cli@0.14.x autorun
+        env:
+          LHCI_BUILD_CONTEXT__CURRENT_BRANCH: ${{ github.ref_name }}
+
+      # ---- 5. Links ---------------------------------------------------------
+      - name: lychee link check
+        uses: lycheeverse/lychee-action@v2
+        with:
+          args: >-
+            --no-progress
+            --include-fragments
+            --exclude-path docs/audit
+            index.html case-study.html
+          fail: true
+
+      - name: Upload audit artifacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: audit-reports
+          path: |
+            axe-report.json
+            .lighthouseci/
+          retention-days: 14
+
+  deploy:
+    name: Deploy to Pages
+    needs: audit
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: '.'
+      - id: deployment
+        uses: actions/deploy-pages@v4

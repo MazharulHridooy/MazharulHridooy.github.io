@@ -1,0 +1,30 @@
+[
+  {
+    "url": "http://localhost:4174/",
+    "timestamp": "2026-09-15T11:19:02.482Z",
+    "testEngine": {
+      "name": "axe-core",
+      "version": "4.13.0"
+    },
+    "violations": [],
+    "counts": {
+      "violations": 0,
+      "passes": 26,
+      "incomplete": 1
+    }
+  },
+  {
+    "url": "http://localhost:4174/case-study.html",
+    "timestamp": "2026-09-15T11:19:02.919Z",
+    "testEngine": {
+      "name": "axe-core",
+      "version": "4.13.0"
+    },
+    "violations": [],
+    "counts": {
+      "violations": 0,
+      "passes": 41,
+      "incomplete": 1
+    }
+  }
+]

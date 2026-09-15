@@ -92,7 +92,7 @@ not be added.*
 **Banner generated** — `assets/linkedin-banner.png`, 1584×396, 35 KB, site
 palette, real Space Grotesk 700 + IBM Plex Mono. Copy starts at x=430, clearing
 both the avatar (x24–420, y198–396) and the ~200px mobile side crop. Proof strip
-carries the source-verified figures: 4 couriers, 14 signals, 16.5h day.
+carries the source-verified figures: 3 couriers, 14 signals, 16.5h day.
 **Not uploaded** — see handoff.
 
 **Three posts + connection sprint** written to `~/CODE/linkedin-posts/`.
@@ -113,7 +113,7 @@ study was not written from the brief as given:
 3. **"Offline PWA" is unsupported.** Zero files match `pwa` — no manifest, no
    service worker registration. 7 files match `offline`. **[VERIFY]** what they
    actually do before any claim ships.
-4. **4 courier integrations** confirmed: Paperfly, Pathao, RedX, Steadfast.
+4. **3 courier integrations** registered: Paperfly, Pathao, Steadfast. RedXAdapter exists but is never imported or registered in couriers.module.ts.
 
 ---
 

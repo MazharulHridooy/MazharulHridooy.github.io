@@ -1,0 +1,40 @@
+{
+  "index": {
+    "scores": {
+      "performance": 100,
+      "accessibility": 100,
+      "best-practices": 100,
+      "seo": 100
+    },
+    "metrics": {
+      "first-contentful-paint-ms": 1352,
+      "largest-contentful-paint-ms": 1652,
+      "speed-index-ms": 1352,
+      "total-blocking-time-ms": 0,
+      "cumulative-layout-shift": 0
+    },
+    "lighthouseVersion": "13.4.1",
+    "formFactor": "mobile",
+    "throttling": "simulated slow 4G, 4x CPU (lighthouse mobile default)",
+    "server": "local gzip server (tools/serve-gzip.py) to approximate GitHub Pages"
+  },
+  "case-study": {
+    "scores": {
+      "performance": 100,
+      "accessibility": 100,
+      "best-practices": 100,
+      "seo": 100
+    },
+    "metrics": {
+      "first-contentful-paint-ms": 1352,
+      "largest-contentful-paint-ms": 1652,
+      "speed-index-ms": 1352,
+      "total-blocking-time-ms": 0,
+      "cumulative-layout-shift": 0
+    },
+    "lighthouseVersion": "13.4.1",
+    "formFactor": "mobile",
+    "throttling": "simulated slow 4G, 4x CPU (lighthouse mobile default)",
+    "server": "local gzip server (tools/serve-gzip.py) to approximate GitHub Pages"
+  }
+}
