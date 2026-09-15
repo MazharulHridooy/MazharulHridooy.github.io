@@ -1,6 +1,6 @@
-# mazharulhridoy.github.io
+# mazharulhridooy.github.io
 
-[![CI](https://github.com/mazharulhridoy/mazharulhridoy.github.io/actions/workflows/ci.yml/badge.svg)](https://github.com/mazharulhridoy/mazharulhridoy.github.io/actions/workflows/ci.yml)
+[![CI](https://github.com/MazharulHridooy/MazharulHridooy.github.io/actions/workflows/ci.yml/badge.svg)](https://github.com/MazharulHridooy/MazharulHridooy.github.io/actions/workflows/ci.yml)
 ![Lighthouse mobile](https://img.shields.io/badge/lighthouse_mobile-100%2F100%2F100%2F100-brightgreen)
 ![axe](https://img.shields.io/badge/axe--core-0_violations-brightgreen)
 ![html-validate](https://img.shields.io/badge/html--validate-0_errors-brightgreen)

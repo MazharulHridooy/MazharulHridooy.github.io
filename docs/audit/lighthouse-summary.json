@@ -12,9 +12,8 @@
       "cls": 0.0004479719280201801,
       "tbt_ms": 0
     },
-    "lighthouseVersion": "13.4.1",
-    "formFactor": "mobile",
-    "note": "Speed Index is noisy on a loaded machine; LCP/FCP are stable. Median of 3 runs is 100."
+    "host": "mazharulhridooy.github.io",
+    "lighthouseVersion": "13.4.1"
   },
   "case-study": {
     "scores": {
@@ -24,13 +23,12 @@
       "seo": 100
     },
     "metrics": {
-      "lcp_ms": 1652,
-      "fcp_ms": 1352,
+      "lcp_ms": 1503,
+      "fcp_ms": 1353,
       "cls": 0,
       "tbt_ms": 0
     },
-    "lighthouseVersion": "13.4.1",
-    "formFactor": "mobile",
-    "note": "Speed Index is noisy on a loaded machine; LCP/FCP are stable. Median of 3 runs is 100."
+    "host": "mazharulhridooy.github.io",
+    "lighthouseVersion": "13.4.1"
   }
 }

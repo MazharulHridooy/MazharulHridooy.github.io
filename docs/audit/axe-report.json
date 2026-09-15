@@ -14,7 +14,7 @@
       "orientationAngle": 0,
       "orientationType": "landscape-primary"
     },
-    "timestamp": "2026-09-15T12:12:58.150Z",
+    "timestamp": "2026-09-15T18:12:38.735Z",
     "url": "http://localhost:4174/",
     "toolOptions": {
       "reporter": "v1"
@@ -1226,7 +1226,7 @@
             ],
             "none": [],
             "impact": null,
-            "html": "<div class=\"cov-now\" id=\"covNow\" style=\"left: 68%;\"></div>",
+            "html": "<div class=\"cov-now\" id=\"covNow\" style=\"left: 0%;\"></div>",
             "target": [
               "#covNow"
             ]
@@ -1500,7 +1500,7 @@
             "all": [],
             "none": [],
             "impact": null,
-            "html": "<span class=\"t\" id=\"dateNow\">15 Sept 2026</span>",
+            "html": "<span class=\"t\" id=\"dateNow\">16 Sept 2026</span>",
             "target": [
               "#dateNow"
             ]
@@ -1535,22 +1535,22 @@
               {
                 "id": "color-contrast",
                 "data": {
-                  "fgColor": "#22d3ee",
+                  "fgColor": "#838d9d",
                   "bgColor": "#0f0f1e",
-                  "contrastRatio": 10.49,
+                  "contrastRatio": 5.65,
                   "fontSize": "15.0pt (20px)",
                   "fontWeight": "bold",
                   "expectedContrastRatio": "3:1"
                 },
                 "relatedNodes": [],
                 "impact": "serious",
-                "message": "Element has sufficient color contrast of 10.49"
+                "message": "Element has sufficient color contrast of 5.65"
               }
             ],
             "all": [],
             "none": [],
             "impact": null,
-            "html": "<span class=\"val on\" id=\"shiftStatus\">Day Shift Active</span>",
+            "html": "<span class=\"val off\" id=\"shiftStatus\">Off-Shift</span>",
             "target": [
               "#shiftStatus"
             ]
@@ -5361,7 +5361,7 @@
             "all": [],
             "none": [],
             "impact": null,
-            "html": "<div class=\"status-row\">\n      <span class=\"live-badge\"><span class=\"dot\"></span> Open to senior ops roles</span>\n      <span class=\"live-clock mono\" id=\"clock\">Dhaka — 18:12:57</span>\n    </div>",
+            "html": "<div class=\"status-row\">\n      <span class=\"live-badge\"><span class=\"dot\"></span> Open to senior ops roles</span>\n      <span class=\"live-clock mono\" id=\"clock\">Dhaka — 00:12:38</span>\n    </div>",
             "target": [
               ".status-row"
             ]
@@ -5421,7 +5421,7 @@
             "all": [],
             "none": [],
             "impact": null,
-            "html": "<span class=\"live-clock mono\" id=\"clock\">Dhaka — 18:12:57</span>",
+            "html": "<span class=\"live-clock mono\" id=\"clock\">Dhaka — 00:12:38</span>",
             "target": [
               "#clock"
             ]
@@ -5601,7 +5601,7 @@
             "all": [],
             "none": [],
             "impact": null,
-            "html": "<div class=\"console-head\">\n        <span class=\"t\">Shift Console</span>\n        <span class=\"t\" id=\"dateNow\">15 Sept 2026</span>\n      </div>",
+            "html": "<div class=\"console-head\">\n        <span class=\"t\">Shift Console</span>\n        <span class=\"t\" id=\"dateNow\">16 Sept 2026</span>\n      </div>",
             "target": [
               ".console-head"
             ]
@@ -5641,7 +5641,7 @@
             "all": [],
             "none": [],
             "impact": null,
-            "html": "<span class=\"t\" id=\"dateNow\">15 Sept 2026</span>",
+            "html": "<span class=\"t\" id=\"dateNow\">16 Sept 2026</span>",
             "target": [
               "#dateNow"
             ]
@@ -5681,7 +5681,7 @@
             "all": [],
             "none": [],
             "impact": null,
-            "html": "<div class=\"shift-now\">\n          <span class=\"label\">Right now</span>\n          <span class=\"val on\" id=\"shiftStatus\">Day Shift Active</span>\n        </div>",
+            "html": "<div class=\"shift-now\">\n          <span class=\"label\">Right now</span>\n          <span class=\"val off\" id=\"shiftStatus\">Off-Shift</span>\n        </div>",
             "target": [
               ".shift-now"
             ]
@@ -5721,7 +5721,7 @@
             "all": [],
             "none": [],
             "impact": null,
-            "html": "<span class=\"val on\" id=\"shiftStatus\">Day Shift Active</span>",
+            "html": "<span class=\"val off\" id=\"shiftStatus\">Off-Shift</span>",
             "target": [
               "#shiftStatus"
             ]
@@ -5741,7 +5741,7 @@
             "all": [],
             "none": [],
             "impact": null,
-            "html": "<div class=\"coverage-bar\" id=\"covBar\">\n          <div class=\"cov-seg morning\">Morning · 8:00–17:00</div>\n          <div class=\"cov-seg day\">Day · 16:30–23:00</div>\n          <div class=\"cov-now\" id=\"covNow\" style=\"left: 68%;\"></div>\n        </div>",
+            "html": "<div class=\"coverage-bar\" id=\"covBar\">\n          <div class=\"cov-seg morning\">Morning · 8:00–17:00</div>\n          <div class=\"cov-seg day\">Day · 16:30–23:00</div>\n          <div class=\"cov-now\" id=\"covNow\" style=\"left: 0%;\"></div>\n        </div>",
             "target": [
               "#covBar"
             ]
@@ -5801,7 +5801,7 @@
             "all": [],
             "none": [],
             "impact": null,
-            "html": "<div class=\"cov-now\" id=\"covNow\" style=\"left: 68%;\"></div>",
+            "html": "<div class=\"cov-now\" id=\"covNow\" style=\"left: 0%;\"></div>",
             "target": [
               "#covNow"
             ]
@@ -9397,7 +9397,7 @@
             "all": [],
             "none": [],
             "impact": "serious",
-            "html": "<span class=\"live-clock mono\" id=\"clock\">Dhaka — 18:12:57</span>",
+            "html": "<span class=\"live-clock mono\" id=\"clock\">Dhaka — 00:12:38</span>",
             "target": [
               "#clock"
             ],
@@ -9519,7 +9519,7 @@
       "orientationAngle": 0,
       "orientationType": "landscape-primary"
     },
-    "timestamp": "2026-09-15T12:12:59.200Z",
+    "timestamp": "2026-09-15T18:12:39.196Z",
     "url": "http://localhost:4174/case-study.html",
     "toolOptions": {
       "reporter": "v1"
