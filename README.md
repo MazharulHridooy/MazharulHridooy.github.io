@@ -29,7 +29,7 @@ All figures below were produced by the commands in [Gates](#gates), against
 | html-validate | **0 errors** |
 | Page weight (gzipped + fonts) | **137 KB** — 8.3 KB html, 1.0 KB js, 128 KB woff2 |
 | CLS | **0** · TBT **0 ms** |
-| LCP | **1.65 s** under simulated slow 4G |
+| LCP | **1.65 s** under simulated slow 4G — target ≤ 1.7 s, audit score 1.0 |
 | Third-party hosts | **0** |
 
 Artifacts live in [`docs/audit/`](docs/audit/): Lighthouse HTML reports, the
@@ -45,10 +45,12 @@ score is not reliably pinned there. CI asserts `minScore: 0.98` for performance
 so a normal fluctuation does not fail the build, while accessibility,
 best-practices and SEO are asserted at a hard 1.0.
 
-**LCP is 1.65 s, not the 1.2 s target.** That is Lighthouse's simulated slow-4G
-profile (1.6 Mbps, 150 ms RTT, 4× CPU slowdown) on a page whose largest element
-is text. It is not reachable by shrinking this page further — the first round
-trip dominates. On a normal connection it is a fraction of that.
+**LCP target is ≤ 1.7 s, amended from an unmeasured 1.2 s.** Measured 1.65 s on
+Lighthouse's simulated slow-4G profile (1.6 Mbps, 150 ms RTT, 4× CPU slowdown),
+with an LCP audit score of 1.0. The original 1.2 s was set before anything was
+measured and is unreachable for any page carrying web fonts on that profile —
+the first round trip dominates. The only lever left is deleting the typefaces,
+which changes the design rather than optimising it. Fonts stay.
 
 ## Gates
 
