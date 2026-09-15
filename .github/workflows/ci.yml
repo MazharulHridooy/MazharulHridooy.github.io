@@ -25,32 +25,34 @@ jobs:
       - name: html-validate
         run: npx --yes html-validate index.html case-study.html
 
-      # ---- 2. Serve ---------------------------------------------------------
-      # tools/serve-gzip.py, not `python -m http.server`. The stdlib server does
-      # not compress, which costs ~3 Lighthouse performance points and makes the
-      # run disagree with production. GitHub Pages serves gzip.
-      - name: Start gzip static server
+      # ---- 2-4. Serve + audit, in ONE step ----------------------------------
+      # The server MUST live in the same step as its consumers. A process
+      # backgrounded with `&` is killed when that step's shell exits, so a
+      # separate "start server" step leaves axe and Lighthouse hitting a dead
+      # port. That is exactly how this failed the first time.
+      - name: Serve, then axe + Lighthouse
         run: |
+          set -euo pipefail
           python3 tools/serve-gzip.py 4174 &
+          SERVER_PID=$!
+          trap 'kill $SERVER_PID 2>/dev/null || true' EXIT
+
           for i in $(seq 1 30); do
             curl -sf -o /dev/null http://localhost:4174/ && break
             sleep 1
           done
-          curl -sI -H 'Accept-Encoding: gzip' http://localhost:4174/ | grep -qi 'content-encoding: gzip'
+          curl -sI -H 'Accept-Encoding: gzip' http://localhost:4174/ \
+            | grep -qi 'content-encoding: gzip'
+          echo "server up, gzip confirmed"
 
-      # ---- 3. Accessibility -------------------------------------------------
-      # Mirrors: npx @axe-core/cli <urls> --exit
-      - name: axe-core (0 serious+ required)
-        run: |
+          # Accessibility — mirrors the local gate
           npx --yes @axe-core/cli \
             http://localhost:4174/ \
             http://localhost:4174/case-study.html \
             --exit --save axe-report.json
 
-      # ---- 4. Lighthouse ----------------------------------------------------
-      # Budgets in lighthouserc.json. Mobile is the default form factor.
-      - name: Lighthouse CI
-        run: npx --yes @lhci/cli@0.14.x autorun
+          # Performance — budgets in lighthouserc.json, mobile form factor
+          npx --yes @lhci/cli@0.14.x autorun
         env:
           LHCI_BUILD_CONTEXT__CURRENT_BRANCH: ${{ github.ref_name }}
 
