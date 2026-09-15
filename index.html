@@ -52,7 +52,7 @@
     --teal-dim:rgba(34,211,238,0.14);
     --text:#eef1f6;
     --text-dim:#96a1b3;
-    --muted:#5b6473;
+    --muted:#717c8e;
     --danger:#f06565;
     --font-display:'Space Grotesk',sans-serif;
     --font-body:'IBM Plex Sans',-apple-system,sans-serif;
@@ -63,6 +63,11 @@
   @media (prefers-reduced-motion: reduce){
     html{scroll-behavior:auto;}
     *{animation-duration:0.001ms !important; animation-iteration-count:1 !important; transition-duration:0.001ms !important;}
+    /* The radar sweep and the live dot are ambient, not informational: stop them
+       outright rather than letting the wildcard run one 0.001ms iteration. */
+    .radar-sweep i{animation:none !important; opacity:0.18;}
+    .live-badge .dot{animation:none !important;}
+    .blip{transition:none !important;}
   }
   body{background:var(--bg); color:var(--text); font-family:var(--font-body); line-height:1.6; -webkit-font-smoothing:antialiased; overflow-x:hidden;}
   a{color:inherit; text-decoration:none;}
@@ -70,6 +75,9 @@
   .mono{font-family:var(--font-mono);}
   .wrap{max-width:1080px; margin:0 auto; padding:0 28px;}
   :focus-visible{outline:2px solid var(--teal); outline-offset:3px;}
+  .skip-link{position:absolute; left:-9999px; top:0; z-index:100; background:var(--amber); color:#160b2e;
+    font-family:var(--font-mono); font-size:13px; font-weight:700; padding:12px 20px; border-radius:0 0 8px 0;}
+  .skip-link:focus{left:0;}
 
   .field{position:fixed; inset:0; z-index:0; pointer-events:none;
     background-image:radial-gradient(circle at 18% 12%, rgba(139,92,246,0.07), transparent 40%),
@@ -243,6 +251,8 @@
 </head>
 <body>
 
+<a class="skip-link" href="#main">Skip to content</a>
+
 <div class="field"></div>
 
 <nav class="site-nav">
@@ -258,6 +268,8 @@
     <button class="nav-burger" id="navBurger" aria-label="Toggle menu" aria-expanded="false" aria-controls="navLinks">☰</button>
   </div>
 </nav>
+
+<main id="main">
 
 <header class="hero" id="top">
   <div class="wrap">
@@ -316,22 +328,22 @@
     <div class="focus-grid">
       <div class="focus-card">
         <span class="status active">ACTIVE</span>
-        <h4>Telephony infrastructure evaluation</h4>
+        <h3>Telephony infrastructure evaluation</h3>
         <p>Comparing vendors on CRM integration depth and analytics capability — the decision is data-driven, not cost-first.</p>
       </div>
       <div class="focus-card">
         <span class="status active">ACTIVE</span>
-        <h4>CRM access control</h4>
+        <h3>CRM access control</h3>
         <p>Tightening role-based access to high-volume customer databases as the team scales past its current headcount.</p>
       </div>
       <div class="focus-card">
         <span class="status active">ACTIVE</span>
-        <h4>Courier performance tracking</h4>
+        <h3>Courier performance tracking</h3>
         <p>Comparative reporting across courier partners to catch return-rate and delivery-time drift before it hits targets.</p>
       </div>
       <div class="focus-card">
         <span class="status progress">IN PROGRESS</span>
-        <h4>Google Cybersecurity Certificate</h4>
+        <h3>Google Cybersecurity Certificate</h3>
         <p>Access control, data privacy, and threat-surface fundamentals — applied directly to how the team's CRM is secured.</p>
       </div>
     </div>
@@ -472,7 +484,7 @@
         <div class="info-row"><span class="k mono">Location</span><span>Dhaka, Bangladesh</span></div>
       </div>
       <div class="contact-card">
-        <h4>Direct contact</h4>
+        <h3>Direct contact</h3>
         <div class="contact-action">
           <a href="mailto:mazharulhridoy.pro@gmail.com">✉ Send an email</a>
           <a href="https://linkedin.com/in/mazharulhridoy" target="_blank" rel="noopener">in Connect on LinkedIn</a>
@@ -481,6 +493,8 @@
     </div>
   </div>
 </section>
+
+</main>
 
 <footer>
   <p>© 2026 Gazi Mazharul Islam Hridoy</p>
