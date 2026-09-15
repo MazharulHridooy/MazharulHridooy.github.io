@@ -14,7 +14,7 @@
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="Mazharul Islam Hridoy">
 <meta property="og:title" content="PROshanti CRM — the system behind a COD e-commerce operation">
-<meta property="og:description" content="14-signal weighted fraud scoring with database-tunable thresholds, normalised courier integrations, and COD reconciliation. Built in-house, running daily.">
+<meta property="og:description" content="14-signal weighted fraud scoring with database-tunable thresholds, normalised courier integrations, and COD reconciliation. Built in-house, currently in UAT.">
 <meta property="og:url" content="https://mazharulhridoy.github.io/case-study.html">
 <meta property="og:image" content="https://mazharulhridoy.github.io/assets/og-case-study.png">
 <meta property="og:image:width" content="1200">
@@ -62,13 +62,14 @@
   <header class="cs-head">
     <p class="eyebrow">Case study · Operations engineering</p>
     <h1>The CRM behind a cash-on-delivery operation</h1>
-    <p class="standfirst">Cash on delivery means anyone can type a phone number and cost you a courier trip. No card, no deposit, no signal — until the parcel comes back. This is the system we run instead, and the parts of it I got in the wrong order.</p>
+    <p class="standfirst">Cash on delivery means anyone can type a phone number and cost you a courier trip. No card, no deposit, no signal — until the parcel comes back. This is the system we built instead — currently in UAT — and the parts of it I got in the wrong order.</p>
     <div class="metastrip">
       <span class="chip"><b>NestJS</b> · API</span>
       <span class="chip"><b>Next.js</b> · web</span>
       <span class="chip"><b>PostgreSQL</b> + <b>Redis</b></span>
       <span class="chip"><b>528</b> commits</span>
       <span class="chip"><b>113</b> suites · <b>1,274</b> tests passing</span>
+        <span class="chip"><b>UAT</b> · not yet in production</span>
     </div>
   </header>
 
@@ -188,7 +189,7 @@
       <li>The registry refuses to let two adapters silently claim the same id — the original comment in that file notes parcels would otherwise go to "whichever registered last — a coin flip in production."</li>
     </ul>
     <div class="callout">
-      <p><strong>An honest note:</strong> a fourth adapter, <code>RedXAdapter</code>, is written and implements the interface, but it is not imported or registered in <code>couriers.module.ts</code>. It is built, not wired. Three carriers are in production.</p>
+      <p><strong>An honest note:</strong> a fourth adapter, <code>RedXAdapter</code>, is written and implements the interface, but it is not imported or registered in <code>couriers.module.ts</code>. It is built, not wired. Three carriers are registered.</p>
     </div>
   </section>
 
@@ -200,26 +201,38 @@
   </section>
 
   <section id="numbers">
-    <h2>The numbers</h2>
+    <h2>Verified in testing</h2>
     <div class="numbers-note">
-      <p><strong>Structural facts below are read directly from the source.</strong> Outcome metrics are marked <span class="verify">[VERIFY]</span> and are deliberately unfilled — they live in the production database, not the repository. A case study with pending metrics ships; one with invented metrics does not survive the first interview.</p>
+      <p><strong>PROshanti is in UAT, not production.</strong> Every figure below is either read from source or produced by running the test suite at commit <code>6232ead</code> — nothing here is a live operational metric, because none exist yet. Production numbers get published after launch.</p>
     </div>
 
     <div class="tablewrap">
       <table>
-        <thead><tr><th scope="col">Metric</th><th scope="col">Value</th><th scope="col">Source</th></tr></thead>
+        <thead><tr><th scope="col">Measure</th><th scope="col">Value</th><th scope="col">How it was produced</th></tr></thead>
         <tbody>
-          <tr><td>Fraud signals</td><td class="num">14</td><td><code>fraud.service.ts</code></td></tr>
-          <tr><td>Courier integrations live</td><td class="num">3</td><td><code>couriers.module.ts</code></td></tr>
-          <tr><td>Test suites passing</td><td class="num">113 / 113</td><td><code>npm test -w api</code></td></tr>
-          <tr><td>Tests passing</td><td class="num">1,274</td><td><code>npm test -w api</code></td></tr>
+          <tr><td>Fraud signals implemented</td><td class="num">14</td><td><code>SIGNALS</code> in <code>fraud.service.ts</code></td></tr>
+          <tr><td>Seeded fraud scenarios passing</td><td class="num">55 / 55</td><td><code>jest --testPathPatterns=fraud</code></td></tr>
+          <tr><td>Delivery-success-meter cases passing</td><td class="num">33 / 33</td><td><code>jest --testPathPatterns=delivery-success-meter</code></td></tr>
+          <tr><td>Logistics + COD reconciliation cases</td><td class="num">48 / 48</td><td><code>jest --testPathPatterns=logistics</code></td></tr>
+          <tr><td>Courier layer cases passing</td><td class="num">140 / 140</td><td><code>jest --testPathPatterns=couriers</code></td></tr>
+          <tr><td>Courier integrations registered</td><td class="num">3</td><td><code>couriers.module.ts</code></td></tr>
+          <tr><td>Full API suite</td><td class="num">113 suites · 1,274 tests</td><td><code>npm test -w api</code>, exit 0</td></tr>
           <tr><td>Commits</td><td class="num">528</td><td><code>git log</code></td></tr>
           <tr><td>Operating day covered</td><td class="num">16.5 h · 2 shifts</td><td>roster</td></tr>
-          <tr><td>Fraud catch rate</td><td><span class="verify">[VERIFY]</span></td><td>production <code>fraud_checks</code></td></tr>
-          <tr><td>Reconciliation variance</td><td><span class="verify">[VERIFY]</span></td><td>production COD ledger</td></tr>
-          <tr><td>Delivery success rate</td><td><span class="verify">[VERIFY]</span></td><td>courier webhooks</td></tr>
         </tbody>
       </table>
+    </div>
+
+    <h3>What the 55 fraud scenarios actually assert</h3>
+    <p>They are not a catch rate against real fraud — there is no real fraud yet to catch. They assert that a constructed order produces the band the specification says it should, which is the part that has to be right before any live number means anything.</p>
+    <ul>
+      <li>Every band boundary, individually: <code>0 → green</code>, <code>30 → green</code> (ceiling), <code>31 → yellow</code> (floor), <code>60 → yellow</code> (ceiling), <code>61 → red</code> (floor), and a combined score above 100 clamped to 100.</li>
+      <li>Every signal's point value in isolation, including the cases where it must <em>not</em> fire — <code>new_high_value</code> stays silent at exactly ৳5,000 because the rule is <code>&gt; 5000</code>, and stays silent for a customer with prior orders.</li>
+      <li>Behavioural consequences: a red order auto-blacklists the phone and IP, holds the order and notifies managers; a red score on an already-progressed order records without rewinding it.</li>
+      <li>Failure modes: a broken order row returns null rather than throwing, and the rules loader <strong>fails open to the in-code constants</strong> when the <code>fraud_rules</code> table is unreachable — so a database problem cannot silently disable fraud scoring.</li>
+    </ul>
+    <div class="callout">
+      <p><strong>Cut rather than guessed.</strong> Fraud catch rate, reconciliation hours saved, delivery success percentage and orders per day are not on this page. They have no test-based source and no production to measure, so they are absent rather than estimated. They go up when there are real ones.</p>
     </div>
   </section>
 

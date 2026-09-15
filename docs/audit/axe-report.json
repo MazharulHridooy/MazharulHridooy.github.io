@@ -14,7 +14,7 @@
       "orientationAngle": 0,
       "orientationType": "landscape-primary"
     },
-    "timestamp": "2026-09-15T11:37:10.390Z",
+    "timestamp": "2026-09-15T12:12:58.150Z",
     "url": "http://localhost:4174/",
     "toolOptions": {
       "reporter": "v1"
@@ -1226,7 +1226,7 @@
             ],
             "none": [],
             "impact": null,
-            "html": "<div class=\"cov-now\" id=\"covNow\" style=\"left: 64.1111%;\"></div>",
+            "html": "<div class=\"cov-now\" id=\"covNow\" style=\"left: 68%;\"></div>",
             "target": [
               "#covNow"
             ]
@@ -4640,7 +4640,7 @@
             "all": [],
             "none": [],
             "impact": null,
-            "html": "<li>Built the in-house CRM that runs the COD operation — orders, courier performance, and delivery tracking in one system the sales team uses daily.</li>",
+            "html": "<li>Built the in-house CRM for the COD operation — orders, courier performance and delivery tracking in one system, currently in UAT with the sales team.</li>",
             "target": [
               ".current > ul > li:nth-child(1)"
             ]
@@ -5361,7 +5361,7 @@
             "all": [],
             "none": [],
             "impact": null,
-            "html": "<div class=\"status-row\">\n      <span class=\"live-badge\"><span class=\"dot\"></span> Open to senior ops roles</span>\n      <span class=\"live-clock mono\" id=\"clock\">Dhaka — 17:37:10</span>\n    </div>",
+            "html": "<div class=\"status-row\">\n      <span class=\"live-badge\"><span class=\"dot\"></span> Open to senior ops roles</span>\n      <span class=\"live-clock mono\" id=\"clock\">Dhaka — 18:12:57</span>\n    </div>",
             "target": [
               ".status-row"
             ]
@@ -5421,7 +5421,7 @@
             "all": [],
             "none": [],
             "impact": null,
-            "html": "<span class=\"live-clock mono\" id=\"clock\">Dhaka — 17:37:10</span>",
+            "html": "<span class=\"live-clock mono\" id=\"clock\">Dhaka — 18:12:57</span>",
             "target": [
               "#clock"
             ]
@@ -5741,7 +5741,7 @@
             "all": [],
             "none": [],
             "impact": null,
-            "html": "<div class=\"coverage-bar\" id=\"covBar\">\n          <div class=\"cov-seg morning\">Morning · 8:00–17:00</div>\n          <div class=\"cov-seg day\">Day · 16:30–23:00</div>\n          <div class=\"cov-now\" id=\"covNow\" style=\"left: 64.1111%;\"></div>\n        </div>",
+            "html": "<div class=\"coverage-bar\" id=\"covBar\">\n          <div class=\"cov-seg morning\">Morning · 8:00–17:00</div>\n          <div class=\"cov-seg day\">Day · 16:30–23:00</div>\n          <div class=\"cov-now\" id=\"covNow\" style=\"left: 68%;\"></div>\n        </div>",
             "target": [
               "#covBar"
             ]
@@ -5801,7 +5801,7 @@
             "all": [],
             "none": [],
             "impact": null,
-            "html": "<div class=\"cov-now\" id=\"covNow\" style=\"left: 64.1111%;\"></div>",
+            "html": "<div class=\"cov-now\" id=\"covNow\" style=\"left: 68%;\"></div>",
             "target": [
               "#covNow"
             ]
@@ -6921,7 +6921,7 @@
             "all": [],
             "none": [],
             "impact": null,
-            "html": "<li>Built the in-house CRM that runs the COD operation — orders, courier performance, and delivery tracking in one system the sales team uses daily.</li>",
+            "html": "<li>Built the in-house CRM for the COD operation — orders, courier performance and delivery tracking in one system, currently in UAT with the sales team.</li>",
             "target": [
               ".current > ul > li:nth-child(1)"
             ]
@@ -9397,7 +9397,7 @@
             "all": [],
             "none": [],
             "impact": "serious",
-            "html": "<span class=\"live-clock mono\" id=\"clock\">Dhaka — 17:37:10</span>",
+            "html": "<span class=\"live-clock mono\" id=\"clock\">Dhaka — 18:12:57</span>",
             "target": [
               "#clock"
             ],
@@ -9475,12 +9475,19 @@
                   "contrastRatio": 0,
                   "fontSize": "12.4pt (16.5px)",
                   "fontWeight": "normal",
-                  "messageKey": "elmPartiallyObscuring",
+                  "messageKey": "bgGradient",
                   "expectedContrastRatio": "4.5:1"
                 },
-                "relatedNodes": [],
+                "relatedNodes": [
+                  {
+                    "html": "<div class=\"field\"></div>",
+                    "target": [
+                      ".field"
+                    ]
+                  }
+                ],
                 "impact": "serious",
-                "message": "Element's background color could not be determined because it partially overlaps other elements"
+                "message": "Element's background color could not be determined due to a background gradient"
               }
             ],
             "all": [],
@@ -9490,7 +9497,7 @@
             "target": [
               ".bio"
             ],
-            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it partially overlaps other elements"
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient"
           }
         ]
       }
@@ -9512,7 +9519,7 @@
       "orientationAngle": 0,
       "orientationType": "landscape-primary"
     },
-    "timestamp": "2026-09-15T11:37:10.839Z",
+    "timestamp": "2026-09-15T12:12:59.200Z",
     "url": "http://localhost:4174/case-study.html",
     "toolOptions": {
       "reporter": "v1"
@@ -10851,7 +10858,7 @@
                   {
                     "html": "<h3>Bands</h3>",
                     "target": [
-                      "h3"
+                      "section:nth-child(4) > h3"
                     ]
                   },
                   {
@@ -10867,9 +10874,15 @@
                     ]
                   },
                   {
-                    "html": "<h2>The numbers</h2>",
+                    "html": "<h2>Verified in testing</h2>",
                     "target": [
                       "#numbers > h2"
+                    ]
+                  },
+                  {
+                    "html": "<h3>What the 55 fraud scenarios actually assert</h3>",
+                    "target": [
+                      "#numbers > h3"
                     ]
                   },
                   {
@@ -11046,7 +11059,7 @@
             "all": [],
             "none": [],
             "impact": null,
-            "html": "<p class=\"standfirst\">Cash on delivery means anyone can type a phone number and cost you a courier trip. No card, no deposit, no signal — until the parcel comes back. This is the system we run instead, and the parts of it I got in the wrong order.</p>",
+            "html": "<p class=\"standfirst\">Cash on delivery means anyone can type a phone number and cost you a courier trip. No card, no deposit, no signal — until the parcel comes back. This is the system we built instead — currently in UAT — and the parts of it I got in the wrong order.</p>",
             "target": [
               ".standfirst"
             ]
@@ -11331,6 +11344,56 @@
               {
                 "id": "color-contrast",
                 "data": {
+                  "fgColor": "#96a1b3",
+                  "bgColor": "#07070f",
+                  "contrastRatio": 7.68,
+                  "fontSize": "8.6pt (11.5px)",
+                  "fontWeight": "normal",
+                  "expectedContrastRatio": "4.5:1"
+                },
+                "relatedNodes": [],
+                "impact": "serious",
+                "message": "Element has sufficient color contrast of 7.68"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": null,
+            "html": "<span class=\"chip\"><b>UAT</b> · not yet in production</span>",
+            "target": [
+              ".chip:nth-child(6)"
+            ]
+          },
+          {
+            "any": [
+              {
+                "id": "color-contrast",
+                "data": {
+                  "fgColor": "#eef1f6",
+                  "bgColor": "#07070f",
+                  "contrastRatio": 17.72,
+                  "fontSize": "8.6pt (11.5px)",
+                  "fontWeight": "bold",
+                  "expectedContrastRatio": "4.5:1"
+                },
+                "relatedNodes": [],
+                "impact": "serious",
+                "message": "Element has sufficient color contrast of 17.72"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": null,
+            "html": "<b>UAT</b>",
+            "target": [
+              ".chip:nth-child(6) > b"
+            ]
+          },
+          {
+            "any": [
+              {
+                "id": "color-contrast",
+                "data": {
                   "fgColor": "#eef1f6",
                   "bgColor": "#07070f",
                   "contrastRatio": 17.72,
@@ -11523,7 +11586,7 @@
             "impact": null,
             "html": "<li><strong>No per-channel profit</strong> — \"we had a good month\" was a feeling, not a figure. Channel-level cost was not tracked against channel-level revenue.</li>",
             "target": [
-              "li:nth-child(3)"
+              "section:nth-child(2) > ul > li:nth-child(3)"
             ]
           },
           {
@@ -12248,7 +12311,7 @@
             "impact": null,
             "html": "<td class=\"num\">20</td>",
             "target": [
-              "tr:nth-child(7) > .num:nth-child(2)"
+              "section:nth-child(4) > .tablewrap > table > tbody > tr:nth-child(7) > .num:nth-child(2)"
             ]
           },
           {
@@ -12323,7 +12386,7 @@
             "impact": null,
             "html": "<td class=\"num\">20</td>",
             "target": [
-              "tr:nth-child(8) > .num:nth-child(2)"
+              "section:nth-child(4) > .tablewrap > table > tbody > tr:nth-child(8) > .num:nth-child(2)"
             ]
           },
           {
@@ -12398,7 +12461,7 @@
             "impact": null,
             "html": "<td class=\"num\">15</td>",
             "target": [
-              "tr:nth-child(9) > .num:nth-child(2)"
+              "section:nth-child(4) > .tablewrap > table > tbody > tr:nth-child(9) > .num:nth-child(2)"
             ]
           },
           {
@@ -12823,7 +12886,7 @@
             "impact": null,
             "html": "<h3>Bands</h3>",
             "target": [
-              "h3"
+              "section:nth-child(4) > h3"
             ]
           },
           {
@@ -13221,7 +13284,7 @@
             "all": [],
             "none": [],
             "impact": null,
-            "html": "<p><strong>An honest note:</strong> a fourth adapter, <code>RedXAdapter</code>, is written and implements the interface, but it is not imported or registered in <code>couriers.module.ts</code>. It is built, not wired. Three carriers are in production.</p>",
+            "html": "<p><strong>An honest note:</strong> a fourth adapter, <code>RedXAdapter</code>, is written and implements the interface, but it is not imported or registered in <code>couriers.module.ts</code>. It is built, not wired. Three carriers are registered.</p>",
             "target": [
               "section:nth-child(5) > .callout > p"
             ]
@@ -13471,7 +13534,7 @@
             "all": [],
             "none": [],
             "impact": null,
-            "html": "<h2>The numbers</h2>",
+            "html": "<h2>Verified in testing</h2>",
             "target": [
               "#numbers > h2"
             ]
@@ -13496,7 +13559,7 @@
             "all": [],
             "none": [],
             "impact": null,
-            "html": "<p>",
+            "html": "<p><strong>PROshanti is in UAT, not production.</strong> Every figure below is either read from source or produced by running the test suite at commit <code>6232ead</code> — nothing here is a live operational metric, because none exist yet. Production numbers get published after launch.</p>",
             "target": [
               ".numbers-note > p"
             ]
@@ -13521,7 +13584,7 @@
             "all": [],
             "none": [],
             "impact": null,
-            "html": "<strong>Structural facts below are read directly from the source.</strong>",
+            "html": "<strong>PROshanti is in UAT, not production.</strong>",
             "target": [
               ".numbers-note > p > strong"
             ]
@@ -13531,24 +13594,24 @@
               {
                 "id": "color-contrast",
                 "data": {
-                  "fgColor": "#d9a44e",
-                  "bgColor": "#3a2d1e",
-                  "contrastRatio": 5.95,
-                  "fontSize": "9.0pt (12px)",
-                  "fontWeight": "bold",
+                  "fgColor": "#22d3ee",
+                  "bgColor": "#151529",
+                  "contrastRatio": 9.92,
+                  "fontSize": "9.6pt (12.76px)",
+                  "fontWeight": "normal",
                   "expectedContrastRatio": "4.5:1"
                 },
                 "relatedNodes": [],
                 "impact": "serious",
-                "message": "Element has sufficient color contrast of 5.95"
+                "message": "Element has sufficient color contrast of 9.92"
               }
             ],
             "all": [],
             "none": [],
             "impact": null,
-            "html": "<span class=\"verify\">[VERIFY]</span>",
+            "html": "<code>6232ead</code>",
             "target": [
-              "p > .verify"
+              ".numbers-note > p > code"
             ]
           },
           {
@@ -13571,7 +13634,7 @@
             "all": [],
             "none": [],
             "impact": null,
-            "html": "<th scope=\"col\">Metric</th>",
+            "html": "<th scope=\"col\">Measure</th>",
             "target": [
               "#numbers > .tablewrap > table > thead > tr > th:nth-child(1)"
             ]
@@ -13621,7 +13684,7 @@
             "all": [],
             "none": [],
             "impact": null,
-            "html": "<th scope=\"col\">Source</th>",
+            "html": "<th scope=\"col\">How it was produced</th>",
             "target": [
               "#numbers > .tablewrap > table > thead > tr > th:nth-child(3)"
             ]
@@ -13646,7 +13709,7 @@
             "all": [],
             "none": [],
             "impact": null,
-            "html": "<td>Fraud signals</td>",
+            "html": "<td>Fraud signals implemented</td>",
             "target": [
               "#numbers > .tablewrap > table > tbody > tr:nth-child(1) > td:nth-child(1)"
             ]
@@ -13681,6 +13744,56 @@
               {
                 "id": "color-contrast",
                 "data": {
+                  "fgColor": "#eef1f6",
+                  "bgColor": "#0f0f1e",
+                  "contrastRatio": 16.74,
+                  "fontSize": "10.5pt (14px)",
+                  "fontWeight": "normal",
+                  "expectedContrastRatio": "4.5:1"
+                },
+                "relatedNodes": [],
+                "impact": "serious",
+                "message": "Element has sufficient color contrast of 16.74"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": null,
+            "html": "<td><code>SIGNALS</code> in <code>fraud.service.ts</code></td>",
+            "target": [
+              "#numbers > .tablewrap > table > tbody > tr:nth-child(1) > td:nth-child(3)"
+            ]
+          },
+          {
+            "any": [
+              {
+                "id": "color-contrast",
+                "data": {
+                  "fgColor": "#22d3ee",
+                  "bgColor": "#151529",
+                  "contrastRatio": 9.92,
+                  "fontSize": "9.2pt (12.32px)",
+                  "fontWeight": "normal",
+                  "expectedContrastRatio": "4.5:1"
+                },
+                "relatedNodes": [],
+                "impact": "serious",
+                "message": "Element has sufficient color contrast of 9.92"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": null,
+            "html": "<code>SIGNALS</code>",
+            "target": [
+              "tr:nth-child(1) > td:nth-child(3) > code:nth-child(1)"
+            ]
+          },
+          {
+            "any": [
+              {
+                "id": "color-contrast",
+                "data": {
                   "fgColor": "#22d3ee",
                   "bgColor": "#151529",
                   "contrastRatio": 9.92,
@@ -13698,7 +13811,7 @@
             "impact": null,
             "html": "<code>fraud.service.ts</code>",
             "target": [
-              "tr:nth-child(1) > td:nth-child(3) > code"
+              "td:nth-child(3) > code:nth-child(2)"
             ]
           },
           {
@@ -13721,7 +13834,7 @@
             "all": [],
             "none": [],
             "impact": null,
-            "html": "<td>Courier integrations live</td>",
+            "html": "<td>Seeded fraud scenarios passing</td>",
             "target": [
               "#numbers > .tablewrap > table > tbody > tr:nth-child(2) > td:nth-child(1)"
             ]
@@ -13746,7 +13859,7 @@
             "all": [],
             "none": [],
             "impact": null,
-            "html": "<td class=\"num\">3</td>",
+            "html": "<td class=\"num\">55 / 55</td>",
             "target": [
               "#numbers > .tablewrap > table > tbody > tr:nth-child(2) > .num"
             ]
@@ -13771,7 +13884,7 @@
             "all": [],
             "none": [],
             "impact": null,
-            "html": "<code>couriers.module.ts</code>",
+            "html": "<code>jest --testPathPatterns=fraud</code>",
             "target": [
               "tr:nth-child(2) > td:nth-child(3) > code"
             ]
@@ -13796,7 +13909,7 @@
             "all": [],
             "none": [],
             "impact": null,
-            "html": "<td>Test suites passing</td>",
+            "html": "<td>Delivery-success-meter cases passing</td>",
             "target": [
               "#numbers > .tablewrap > table > tbody > tr:nth-child(3) > td:nth-child(1)"
             ]
@@ -13821,7 +13934,7 @@
             "all": [],
             "none": [],
             "impact": null,
-            "html": "<td class=\"num\">113 / 113</td>",
+            "html": "<td class=\"num\">33 / 33</td>",
             "target": [
               "#numbers > .tablewrap > table > tbody > tr:nth-child(3) > .num"
             ]
@@ -13846,7 +13959,7 @@
             "all": [],
             "none": [],
             "impact": null,
-            "html": "<code>npm test -w api</code>",
+            "html": "<code>jest --testPathPatterns=delivery-success-meter</code>",
             "target": [
               "tr:nth-child(3) > td:nth-child(3) > code"
             ]
@@ -13871,7 +13984,7 @@
             "all": [],
             "none": [],
             "impact": null,
-            "html": "<td>Tests passing</td>",
+            "html": "<td>Logistics + COD reconciliation cases</td>",
             "target": [
               "#numbers > .tablewrap > table > tbody > tr:nth-child(4) > td:nth-child(1)"
             ]
@@ -13896,7 +14009,7 @@
             "all": [],
             "none": [],
             "impact": null,
-            "html": "<td class=\"num\">1,274</td>",
+            "html": "<td class=\"num\">48 / 48</td>",
             "target": [
               "#numbers > .tablewrap > table > tbody > tr:nth-child(4) > .num"
             ]
@@ -13921,7 +14034,7 @@
             "all": [],
             "none": [],
             "impact": null,
-            "html": "<code>npm test -w api</code>",
+            "html": "<code>jest --testPathPatterns=logistics</code>",
             "target": [
               "tr:nth-child(4) > td:nth-child(3) > code"
             ]
@@ -13946,7 +14059,7 @@
             "all": [],
             "none": [],
             "impact": null,
-            "html": "<td>Commits</td>",
+            "html": "<td>Courier layer cases passing</td>",
             "target": [
               "#numbers > .tablewrap > table > tbody > tr:nth-child(5) > td:nth-child(1)"
             ]
@@ -13971,7 +14084,7 @@
             "all": [],
             "none": [],
             "impact": null,
-            "html": "<td class=\"num\">528</td>",
+            "html": "<td class=\"num\">140 / 140</td>",
             "target": [
               "#numbers > .tablewrap > table > tbody > tr:nth-child(5) > .num"
             ]
@@ -13996,7 +14109,7 @@
             "all": [],
             "none": [],
             "impact": null,
-            "html": "<code>git log</code>",
+            "html": "<code>jest --testPathPatterns=couriers</code>",
             "target": [
               "tr:nth-child(5) > td:nth-child(3) > code"
             ]
@@ -14021,7 +14134,7 @@
             "all": [],
             "none": [],
             "impact": null,
-            "html": "<td>Operating day covered</td>",
+            "html": "<td>Courier integrations registered</td>",
             "target": [
               "#numbers > .tablewrap > table > tbody > tr:nth-child(6) > td:nth-child(1)"
             ]
@@ -14046,7 +14159,7 @@
             "all": [],
             "none": [],
             "impact": null,
-            "html": "<td class=\"num\">16.5 h · 2 shifts</td>",
+            "html": "<td class=\"num\">3</td>",
             "target": [
               "#numbers > .tablewrap > table > tbody > tr:nth-child(6) > .num"
             ]
@@ -14056,24 +14169,24 @@
               {
                 "id": "color-contrast",
                 "data": {
-                  "fgColor": "#eef1f6",
-                  "bgColor": "#0f0f1e",
-                  "contrastRatio": 16.74,
-                  "fontSize": "10.5pt (14px)",
+                  "fgColor": "#22d3ee",
+                  "bgColor": "#151529",
+                  "contrastRatio": 9.92,
+                  "fontSize": "9.2pt (12.32px)",
                   "fontWeight": "normal",
                   "expectedContrastRatio": "4.5:1"
                 },
                 "relatedNodes": [],
                 "impact": "serious",
-                "message": "Element has sufficient color contrast of 16.74"
+                "message": "Element has sufficient color contrast of 9.92"
               }
             ],
             "all": [],
             "none": [],
             "impact": null,
-            "html": "<td>roster</td>",
+            "html": "<code>couriers.module.ts</code>",
             "target": [
-              "#numbers > .tablewrap > table > tbody > tr:nth-child(6) > td:nth-child(3)"
+              "tr:nth-child(6) > td:nth-child(3) > code"
             ]
           },
           {
@@ -14096,7 +14209,7 @@
             "all": [],
             "none": [],
             "impact": null,
-            "html": "<td>Fraud catch rate</td>",
+            "html": "<td>Full API suite</td>",
             "target": [
               "#numbers > .tablewrap > table > tbody > tr:nth-child(7) > td:nth-child(1)"
             ]
@@ -14106,24 +14219,24 @@
               {
                 "id": "color-contrast",
                 "data": {
-                  "fgColor": "#d9a44e",
-                  "bgColor": "#292224",
-                  "contrastRatio": 6.94,
-                  "fontSize": "9.0pt (12px)",
-                  "fontWeight": "bold",
+                  "fgColor": "#eef1f6",
+                  "bgColor": "#0f0f1e",
+                  "contrastRatio": 16.74,
+                  "fontSize": "10.5pt (14px)",
+                  "fontWeight": "normal",
                   "expectedContrastRatio": "4.5:1"
                 },
                 "relatedNodes": [],
                 "impact": "serious",
-                "message": "Element has sufficient color contrast of 6.94"
+                "message": "Element has sufficient color contrast of 16.74"
               }
             ],
             "all": [],
             "none": [],
             "impact": null,
-            "html": "<span class=\"verify\">[VERIFY]</span>",
+            "html": "<td class=\"num\">113 suites · 1,274 tests</td>",
             "target": [
-              "tr:nth-child(7) > td:nth-child(2) > .verify"
+              "#numbers > .tablewrap > table > tbody > tr:nth-child(7) > .num"
             ]
           },
           {
@@ -14146,7 +14259,7 @@
             "all": [],
             "none": [],
             "impact": null,
-            "html": "<td>production <code>fraud_checks</code></td>",
+            "html": "<td><code>npm test -w api</code>, exit 0</td>",
             "target": [
               "#numbers > .tablewrap > table > tbody > tr:nth-child(7) > td:nth-child(3)"
             ]
@@ -14171,7 +14284,7 @@
             "all": [],
             "none": [],
             "impact": null,
-            "html": "<code>fraud_checks</code>",
+            "html": "<code>npm test -w api</code>",
             "target": [
               "tr:nth-child(7) > td:nth-child(3) > code"
             ]
@@ -14196,7 +14309,7 @@
             "all": [],
             "none": [],
             "impact": null,
-            "html": "<td>Reconciliation variance</td>",
+            "html": "<td>Commits</td>",
             "target": [
               "#numbers > .tablewrap > table > tbody > tr:nth-child(8) > td:nth-child(1)"
             ]
@@ -14206,24 +14319,49 @@
               {
                 "id": "color-contrast",
                 "data": {
-                  "fgColor": "#d9a44e",
-                  "bgColor": "#292224",
-                  "contrastRatio": 6.94,
-                  "fontSize": "9.0pt (12px)",
-                  "fontWeight": "bold",
+                  "fgColor": "#eef1f6",
+                  "bgColor": "#0f0f1e",
+                  "contrastRatio": 16.74,
+                  "fontSize": "10.5pt (14px)",
+                  "fontWeight": "normal",
                   "expectedContrastRatio": "4.5:1"
                 },
                 "relatedNodes": [],
                 "impact": "serious",
-                "message": "Element has sufficient color contrast of 6.94"
+                "message": "Element has sufficient color contrast of 16.74"
               }
             ],
             "all": [],
             "none": [],
             "impact": null,
-            "html": "<span class=\"verify\">[VERIFY]</span>",
+            "html": "<td class=\"num\">528</td>",
             "target": [
-              "tr:nth-child(8) > td:nth-child(2) > .verify"
+              "#numbers > .tablewrap > table > tbody > tr:nth-child(8) > .num"
+            ]
+          },
+          {
+            "any": [
+              {
+                "id": "color-contrast",
+                "data": {
+                  "fgColor": "#22d3ee",
+                  "bgColor": "#151529",
+                  "contrastRatio": 9.92,
+                  "fontSize": "9.2pt (12.32px)",
+                  "fontWeight": "normal",
+                  "expectedContrastRatio": "4.5:1"
+                },
+                "relatedNodes": [],
+                "impact": "serious",
+                "message": "Element has sufficient color contrast of 9.92"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": null,
+            "html": "<code>git log</code>",
+            "target": [
+              "tr:nth-child(8) > td:nth-child(3) > code"
             ]
           },
           {
@@ -14246,32 +14384,7 @@
             "all": [],
             "none": [],
             "impact": null,
-            "html": "<td>production COD ledger</td>",
-            "target": [
-              "#numbers > .tablewrap > table > tbody > tr:nth-child(8) > td:nth-child(3)"
-            ]
-          },
-          {
-            "any": [
-              {
-                "id": "color-contrast",
-                "data": {
-                  "fgColor": "#eef1f6",
-                  "bgColor": "#0f0f1e",
-                  "contrastRatio": 16.74,
-                  "fontSize": "10.5pt (14px)",
-                  "fontWeight": "normal",
-                  "expectedContrastRatio": "4.5:1"
-                },
-                "relatedNodes": [],
-                "impact": "serious",
-                "message": "Element has sufficient color contrast of 16.74"
-              }
-            ],
-            "all": [],
-            "none": [],
-            "impact": null,
-            "html": "<td>Delivery success rate</td>",
+            "html": "<td>Operating day covered</td>",
             "target": [
               "#numbers > .tablewrap > table > tbody > tr:nth-child(9) > td:nth-child(1)"
             ]
@@ -14281,24 +14394,24 @@
               {
                 "id": "color-contrast",
                 "data": {
-                  "fgColor": "#d9a44e",
-                  "bgColor": "#292224",
-                  "contrastRatio": 6.94,
-                  "fontSize": "9.0pt (12px)",
-                  "fontWeight": "bold",
+                  "fgColor": "#eef1f6",
+                  "bgColor": "#0f0f1e",
+                  "contrastRatio": 16.74,
+                  "fontSize": "10.5pt (14px)",
+                  "fontWeight": "normal",
                   "expectedContrastRatio": "4.5:1"
                 },
                 "relatedNodes": [],
                 "impact": "serious",
-                "message": "Element has sufficient color contrast of 6.94"
+                "message": "Element has sufficient color contrast of 16.74"
               }
             ],
             "all": [],
             "none": [],
             "impact": null,
-            "html": "<span class=\"verify\">[VERIFY]</span>",
+            "html": "<td class=\"num\">16.5 h · 2 shifts</td>",
             "target": [
-              "tr:nth-child(9) > td:nth-child(2) > .verify"
+              "#numbers > .tablewrap > table > tbody > tr:nth-child(9) > .num"
             ]
           },
           {
@@ -14321,9 +14434,459 @@
             "all": [],
             "none": [],
             "impact": null,
-            "html": "<td>courier webhooks</td>",
+            "html": "<td>roster</td>",
             "target": [
               "#numbers > .tablewrap > table > tbody > tr:nth-child(9) > td:nth-child(3)"
+            ]
+          },
+          {
+            "any": [
+              {
+                "id": "color-contrast",
+                "data": {
+                  "fgColor": "#eef1f6",
+                  "bgColor": "#07070f",
+                  "contrastRatio": 17.72,
+                  "fontSize": "12.4pt (16.5px)",
+                  "fontWeight": "bold",
+                  "expectedContrastRatio": "4.5:1"
+                },
+                "relatedNodes": [],
+                "impact": "serious",
+                "message": "Element has sufficient color contrast of 17.72"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": null,
+            "html": "<h3>What the 55 fraud scenarios actually assert</h3>",
+            "target": [
+              "#numbers > h3"
+            ]
+          },
+          {
+            "any": [
+              {
+                "id": "color-contrast",
+                "data": {
+                  "fgColor": "#96a1b3",
+                  "bgColor": "#07070f",
+                  "contrastRatio": 7.68,
+                  "fontSize": "12.0pt (16px)",
+                  "fontWeight": "normal",
+                  "expectedContrastRatio": "4.5:1"
+                },
+                "relatedNodes": [],
+                "impact": "serious",
+                "message": "Element has sufficient color contrast of 7.68"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": null,
+            "html": "<p>They are not a catch rate against real fraud — there is no real fraud yet to catch. They assert that a constructed order produces the band the specification says it should, which is the part that has to be right before any live number means anything.</p>",
+            "target": [
+              "#numbers > p"
+            ]
+          },
+          {
+            "any": [
+              {
+                "id": "color-contrast",
+                "data": {
+                  "fgColor": "#96a1b3",
+                  "bgColor": "#07070f",
+                  "contrastRatio": 7.68,
+                  "fontSize": "12.0pt (16px)",
+                  "fontWeight": "normal",
+                  "expectedContrastRatio": "4.5:1"
+                },
+                "relatedNodes": [],
+                "impact": "serious",
+                "message": "Element has sufficient color contrast of 7.68"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": null,
+            "html": "<li>Every band boundary, individually: <code>0 → green</code>, <code>30 → green</code> (ceiling), <code>31 → yellow</code> (floor), <code>60 → yellow</code> (ceiling), <code>61 → red</code> (floor), and a combined score above 100 clamped to 100.</li>",
+            "target": [
+              "#numbers > ul > li:nth-child(1)"
+            ]
+          },
+          {
+            "any": [
+              {
+                "id": "color-contrast",
+                "data": {
+                  "fgColor": "#22d3ee",
+                  "bgColor": "#151529",
+                  "contrastRatio": 9.92,
+                  "fontSize": "10.6pt (14.08px)",
+                  "fontWeight": "normal",
+                  "expectedContrastRatio": "4.5:1"
+                },
+                "relatedNodes": [],
+                "impact": "serious",
+                "message": "Element has sufficient color contrast of 9.92"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": null,
+            "html": "<code>0 → green</code>",
+            "target": [
+              "li:nth-child(1) > code:nth-child(1)"
+            ]
+          },
+          {
+            "any": [
+              {
+                "id": "color-contrast",
+                "data": {
+                  "fgColor": "#22d3ee",
+                  "bgColor": "#151529",
+                  "contrastRatio": 9.92,
+                  "fontSize": "10.6pt (14.08px)",
+                  "fontWeight": "normal",
+                  "expectedContrastRatio": "4.5:1"
+                },
+                "relatedNodes": [],
+                "impact": "serious",
+                "message": "Element has sufficient color contrast of 9.92"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": null,
+            "html": "<code>30 → green</code>",
+            "target": [
+              "li:nth-child(1) > code:nth-child(2)"
+            ]
+          },
+          {
+            "any": [
+              {
+                "id": "color-contrast",
+                "data": {
+                  "fgColor": "#22d3ee",
+                  "bgColor": "#151529",
+                  "contrastRatio": 9.92,
+                  "fontSize": "10.6pt (14.08px)",
+                  "fontWeight": "normal",
+                  "expectedContrastRatio": "4.5:1"
+                },
+                "relatedNodes": [],
+                "impact": "serious",
+                "message": "Element has sufficient color contrast of 9.92"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": null,
+            "html": "<code>31 → yellow</code>",
+            "target": [
+              "li:nth-child(1) > code:nth-child(3)"
+            ]
+          },
+          {
+            "any": [
+              {
+                "id": "color-contrast",
+                "data": {
+                  "fgColor": "#22d3ee",
+                  "bgColor": "#151529",
+                  "contrastRatio": 9.92,
+                  "fontSize": "10.6pt (14.08px)",
+                  "fontWeight": "normal",
+                  "expectedContrastRatio": "4.5:1"
+                },
+                "relatedNodes": [],
+                "impact": "serious",
+                "message": "Element has sufficient color contrast of 9.92"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": null,
+            "html": "<code>60 → yellow</code>",
+            "target": [
+              "code:nth-child(4)"
+            ]
+          },
+          {
+            "any": [
+              {
+                "id": "color-contrast",
+                "data": {
+                  "fgColor": "#22d3ee",
+                  "bgColor": "#151529",
+                  "contrastRatio": 9.92,
+                  "fontSize": "10.6pt (14.08px)",
+                  "fontWeight": "normal",
+                  "expectedContrastRatio": "4.5:1"
+                },
+                "relatedNodes": [],
+                "impact": "serious",
+                "message": "Element has sufficient color contrast of 9.92"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": null,
+            "html": "<code>61 → red</code>",
+            "target": [
+              "code:nth-child(5)"
+            ]
+          },
+          {
+            "any": [
+              {
+                "id": "color-contrast",
+                "data": {
+                  "fgColor": "#96a1b3",
+                  "bgColor": "#07070f",
+                  "contrastRatio": 7.68,
+                  "fontSize": "12.0pt (16px)",
+                  "fontWeight": "normal",
+                  "expectedContrastRatio": "4.5:1"
+                },
+                "relatedNodes": [],
+                "impact": "serious",
+                "message": "Element has sufficient color contrast of 7.68"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": null,
+            "html": "<li>Every signal's point value in isolation, including the cases where it must <em>not</em> fire — <code>new_high_value</code> stays silent at exactly ৳5,000 because the rule is <code>&gt; 5000</code>, and stays silent for a customer with prior orders.</li>",
+            "target": [
+              "#numbers > ul > li:nth-child(2)"
+            ]
+          },
+          {
+            "any": [
+              {
+                "id": "color-contrast",
+                "data": {
+                  "fgColor": "#96a1b3",
+                  "bgColor": "#07070f",
+                  "contrastRatio": 7.68,
+                  "fontSize": "12.0pt (16px)",
+                  "fontWeight": "normal",
+                  "expectedContrastRatio": "4.5:1"
+                },
+                "relatedNodes": [],
+                "impact": "serious",
+                "message": "Element has sufficient color contrast of 7.68"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": null,
+            "html": "<em>not</em>",
+            "target": [
+              "em"
+            ]
+          },
+          {
+            "any": [
+              {
+                "id": "color-contrast",
+                "data": {
+                  "fgColor": "#22d3ee",
+                  "bgColor": "#151529",
+                  "contrastRatio": 9.92,
+                  "fontSize": "10.6pt (14.08px)",
+                  "fontWeight": "normal",
+                  "expectedContrastRatio": "4.5:1"
+                },
+                "relatedNodes": [],
+                "impact": "serious",
+                "message": "Element has sufficient color contrast of 9.92"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": null,
+            "html": "<code>new_high_value</code>",
+            "target": [
+              "li:nth-child(2) > code:nth-child(2)"
+            ]
+          },
+          {
+            "any": [
+              {
+                "id": "color-contrast",
+                "data": {
+                  "fgColor": "#22d3ee",
+                  "bgColor": "#151529",
+                  "contrastRatio": 9.92,
+                  "fontSize": "10.6pt (14.08px)",
+                  "fontWeight": "normal",
+                  "expectedContrastRatio": "4.5:1"
+                },
+                "relatedNodes": [],
+                "impact": "serious",
+                "message": "Element has sufficient color contrast of 9.92"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": null,
+            "html": "<code>&gt; 5000</code>",
+            "target": [
+              "li:nth-child(2) > code:nth-child(3)"
+            ]
+          },
+          {
+            "any": [
+              {
+                "id": "color-contrast",
+                "data": {
+                  "fgColor": "#96a1b3",
+                  "bgColor": "#07070f",
+                  "contrastRatio": 7.68,
+                  "fontSize": "12.0pt (16px)",
+                  "fontWeight": "normal",
+                  "expectedContrastRatio": "4.5:1"
+                },
+                "relatedNodes": [],
+                "impact": "serious",
+                "message": "Element has sufficient color contrast of 7.68"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": null,
+            "html": "<li>Behavioural consequences: a red order auto-blacklists the phone and IP, holds the order and notifies managers; a red score on an already-progressed order records without rewinding it.</li>",
+            "target": [
+              "#numbers > ul > li:nth-child(3)"
+            ]
+          },
+          {
+            "any": [
+              {
+                "id": "color-contrast",
+                "data": {
+                  "fgColor": "#96a1b3",
+                  "bgColor": "#07070f",
+                  "contrastRatio": 7.68,
+                  "fontSize": "12.0pt (16px)",
+                  "fontWeight": "normal",
+                  "expectedContrastRatio": "4.5:1"
+                },
+                "relatedNodes": [],
+                "impact": "serious",
+                "message": "Element has sufficient color contrast of 7.68"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": null,
+            "html": "<li>Failure modes: a broken order row returns null rather than throwing, and the rules loader <strong>fails open to the in-code constants</strong> when the <code>fraud_rules</code> table is unreachable — so a database problem cannot silently disable fraud scoring.</li>",
+            "target": [
+              "li:nth-child(4)"
+            ]
+          },
+          {
+            "any": [
+              {
+                "id": "color-contrast",
+                "data": {
+                  "fgColor": "#96a1b3",
+                  "bgColor": "#07070f",
+                  "contrastRatio": 7.68,
+                  "fontSize": "12.0pt (16px)",
+                  "fontWeight": "bold",
+                  "expectedContrastRatio": "4.5:1"
+                },
+                "relatedNodes": [],
+                "impact": "serious",
+                "message": "Element has sufficient color contrast of 7.68"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": null,
+            "html": "<strong>fails open to the in-code constants</strong>",
+            "target": [
+              "li:nth-child(4) > strong"
+            ]
+          },
+          {
+            "any": [
+              {
+                "id": "color-contrast",
+                "data": {
+                  "fgColor": "#22d3ee",
+                  "bgColor": "#151529",
+                  "contrastRatio": 9.92,
+                  "fontSize": "10.6pt (14.08px)",
+                  "fontWeight": "normal",
+                  "expectedContrastRatio": "4.5:1"
+                },
+                "relatedNodes": [],
+                "impact": "serious",
+                "message": "Element has sufficient color contrast of 9.92"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": null,
+            "html": "<code>fraud_rules</code>",
+            "target": [
+              "li:nth-child(4) > code"
+            ]
+          },
+          {
+            "any": [
+              {
+                "id": "color-contrast",
+                "data": {
+                  "fgColor": "#96a1b3",
+                  "bgColor": "#0f0f1e",
+                  "contrastRatio": 7.26,
+                  "fontSize": "12.0pt (16px)",
+                  "fontWeight": "normal",
+                  "expectedContrastRatio": "4.5:1"
+                },
+                "relatedNodes": [],
+                "impact": "serious",
+                "message": "Element has sufficient color contrast of 7.26"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": null,
+            "html": "<p>",
+            "target": [
+              "#numbers > .callout > p"
+            ]
+          },
+          {
+            "any": [
+              {
+                "id": "color-contrast",
+                "data": {
+                  "fgColor": "#eef1f6",
+                  "bgColor": "#0f0f1e",
+                  "contrastRatio": 16.74,
+                  "fontSize": "12.0pt (16px)",
+                  "fontWeight": "bold",
+                  "expectedContrastRatio": "4.5:1"
+                },
+                "relatedNodes": [],
+                "impact": "serious",
+                "message": "Element has sufficient color contrast of 16.74"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": null,
+            "html": "<strong>Cut rather than guessed.</strong>",
+            "target": [
+              "#numbers > .callout > p > strong"
             ]
           },
           {
@@ -14719,7 +15282,7 @@
             "impact": null,
             "html": "<h3>Bands</h3>",
             "target": [
-              "h3"
+              "section:nth-child(4) > h3"
             ]
           },
           {
@@ -14771,9 +15334,27 @@
             "all": [],
             "none": [],
             "impact": null,
-            "html": "<h2>The numbers</h2>",
+            "html": "<h2>Verified in testing</h2>",
             "target": [
               "#numbers > h2"
+            ]
+          },
+          {
+            "any": [
+              {
+                "id": "has-visible-text",
+                "data": null,
+                "relatedNodes": [],
+                "impact": "minor",
+                "message": "Element has text that is visible to screen readers"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": null,
+            "html": "<h3>What the 55 fraud scenarios actually assert</h3>",
+            "target": [
+              "#numbers > h3"
             ]
           },
           {
@@ -14874,7 +15455,7 @@
             "all": [],
             "none": [],
             "impact": null,
-            "html": "<th scope=\"col\">Metric</th>",
+            "html": "<th scope=\"col\">Measure</th>",
             "target": [
               "#numbers > .tablewrap > table > thead > tr > th:nth-child(1)"
             ]
@@ -14910,7 +15491,7 @@
             "all": [],
             "none": [],
             "impact": null,
-            "html": "<th scope=\"col\">Source</th>",
+            "html": "<th scope=\"col\">How it was produced</th>",
             "target": [
               "#numbers > .tablewrap > table > thead > tr > th:nth-child(3)"
             ]
@@ -14981,6 +15562,12 @@
                         "html > body > main:nth-child(3) > div > section:nth-child(7) > h2:nth-child(1)"
                       ],
                       "level": 2
+                    },
+                    {
+                      "ancestry": [
+                        "html > body > main:nth-child(3) > div > section:nth-child(7) > h3:nth-child(4)"
+                      ],
+                      "level": 3
                     },
                     {
                       "ancestry": [
@@ -15072,7 +15659,7 @@
             "impact": null,
             "html": "<h3>Bands</h3>",
             "target": [
-              "h3"
+              "section:nth-child(4) > h3"
             ]
           },
           {
@@ -15124,9 +15711,27 @@
             "all": [],
             "none": [],
             "impact": null,
-            "html": "<h2>The numbers</h2>",
+            "html": "<h2>Verified in testing</h2>",
             "target": [
               "#numbers > h2"
+            ]
+          },
+          {
+            "any": [
+              {
+                "id": "heading-order",
+                "data": null,
+                "relatedNodes": [],
+                "impact": "moderate",
+                "message": "Heading order valid"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": null,
+            "html": "<h3>What the 55 fraud scenarios actually assert</h3>",
+            "target": [
+              "#numbers > h3"
             ]
           },
           {
@@ -15776,6 +16381,24 @@
             "target": [
               "section:nth-child(5) > ul"
             ]
+          },
+          {
+            "any": [],
+            "all": [],
+            "none": [
+              {
+                "id": "only-listitems",
+                "data": null,
+                "relatedNodes": [],
+                "impact": "serious",
+                "message": "List element only has direct children that are allowed inside <li> elements"
+              }
+            ],
+            "impact": null,
+            "html": "<ul>",
+            "target": [
+              "#numbers > ul"
+            ]
           }
         ]
       },
@@ -15846,7 +16469,7 @@
             "impact": null,
             "html": "<li><strong>No per-channel profit</strong> — \"we had a good month\" was a feeling, not a figure. Channel-level cost was not tracked against channel-level revenue.</li>",
             "target": [
-              "li:nth-child(3)"
+              "section:nth-child(2) > ul > li:nth-child(3)"
             ]
           },
           {
@@ -15883,6 +16506,78 @@
             "html": "<li>The registry refuses to let two adapters silently claim the same id — the original comment in that file notes parcels would otherwise go to \"whichever registered last — a coin flip in production.\"</li>",
             "target": [
               "section:nth-child(5) > ul > li:nth-child(2)"
+            ]
+          },
+          {
+            "any": [
+              {
+                "id": "listitem",
+                "data": null,
+                "relatedNodes": [],
+                "impact": "serious",
+                "message": "List item has a <ul>, <ol> or role=\"list\" parent element"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": null,
+            "html": "<li>Every band boundary, individually: <code>0 → green</code>, <code>30 → green</code> (ceiling), <code>31 → yellow</code> (floor), <code>60 → yellow</code> (ceiling), <code>61 → red</code> (floor), and a combined score above 100 clamped to 100.</li>",
+            "target": [
+              "#numbers > ul > li:nth-child(1)"
+            ]
+          },
+          {
+            "any": [
+              {
+                "id": "listitem",
+                "data": null,
+                "relatedNodes": [],
+                "impact": "serious",
+                "message": "List item has a <ul>, <ol> or role=\"list\" parent element"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": null,
+            "html": "<li>Every signal's point value in isolation, including the cases where it must <em>not</em> fire — <code>new_high_value</code> stays silent at exactly ৳5,000 because the rule is <code>&gt; 5000</code>, and stays silent for a customer with prior orders.</li>",
+            "target": [
+              "#numbers > ul > li:nth-child(2)"
+            ]
+          },
+          {
+            "any": [
+              {
+                "id": "listitem",
+                "data": null,
+                "relatedNodes": [],
+                "impact": "serious",
+                "message": "List item has a <ul>, <ol> or role=\"list\" parent element"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": null,
+            "html": "<li>Behavioural consequences: a red order auto-blacklists the phone and IP, holds the order and notifies managers; a red score on an already-progressed order records without rewinding it.</li>",
+            "target": [
+              "#numbers > ul > li:nth-child(3)"
+            ]
+          },
+          {
+            "any": [
+              {
+                "id": "listitem",
+                "data": null,
+                "relatedNodes": [],
+                "impact": "serious",
+                "message": "List item has a <ul>, <ol> or role=\"list\" parent element"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": null,
+            "html": "<li>Failure modes: a broken order row returns null rather than throwing, and the rules loader <strong>fails open to the in-code constants</strong> when the <code>fraud_rules</code> table is unreachable — so a database problem cannot silently disable fraud scoring.</li>",
+            "target": [
+              "li:nth-child(4)"
             ]
           }
         ]
@@ -16279,7 +16974,7 @@
             "all": [],
             "none": [],
             "impact": null,
-            "html": "<p class=\"standfirst\">Cash on delivery means anyone can type a phone number and cost you a courier trip. No card, no deposit, no signal — until the parcel comes back. This is the system we run instead, and the parts of it I got in the wrong order.</p>",
+            "html": "<p class=\"standfirst\">Cash on delivery means anyone can type a phone number and cost you a courier trip. No card, no deposit, no signal — until the parcel comes back. This is the system we built instead — currently in UAT — and the parts of it I got in the wrong order.</p>",
             "target": [
               ".standfirst"
             ]
@@ -16559,6 +17254,46 @@
             "all": [],
             "none": [],
             "impact": null,
+            "html": "<span class=\"chip\"><b>UAT</b> · not yet in production</span>",
+            "target": [
+              ".chip:nth-child(6)"
+            ]
+          },
+          {
+            "any": [
+              {
+                "id": "region",
+                "data": {
+                  "isIframe": false
+                },
+                "relatedNodes": [],
+                "impact": "moderate",
+                "message": "All page content is contained by landmarks"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": null,
+            "html": "<b>UAT</b>",
+            "target": [
+              ".chip:nth-child(6) > b"
+            ]
+          },
+          {
+            "any": [
+              {
+                "id": "region",
+                "data": {
+                  "isIframe": false
+                },
+                "relatedNodes": [],
+                "impact": "moderate",
+                "message": "All page content is contained by landmarks"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": null,
             "html": "<section>",
             "target": [
               "section:nth-child(2)"
@@ -16741,7 +17476,7 @@
             "impact": null,
             "html": "<li><strong>No per-channel profit</strong> — \"we had a good month\" was a feeling, not a figure. Channel-level cost was not tracked against channel-level revenue.</li>",
             "target": [
-              "li:nth-child(3)"
+              "section:nth-child(2) > ul > li:nth-child(3)"
             ]
           },
           {
@@ -18421,7 +19156,7 @@
             "impact": null,
             "html": "<td class=\"num\">20</td>",
             "target": [
-              "tr:nth-child(7) > .num:nth-child(2)"
+              "section:nth-child(4) > .tablewrap > table > tbody > tr:nth-child(7) > .num:nth-child(2)"
             ]
           },
           {
@@ -18501,7 +19236,7 @@
             "impact": null,
             "html": "<td class=\"num\">20</td>",
             "target": [
-              "tr:nth-child(8) > .num:nth-child(2)"
+              "section:nth-child(4) > .tablewrap > table > tbody > tr:nth-child(8) > .num:nth-child(2)"
             ]
           },
           {
@@ -18581,7 +19316,7 @@
             "impact": null,
             "html": "<td class=\"num\">15</td>",
             "target": [
-              "tr:nth-child(9) > .num:nth-child(2)"
+              "section:nth-child(4) > .tablewrap > table > tbody > tr:nth-child(9) > .num:nth-child(2)"
             ]
           },
           {
@@ -19021,7 +19756,7 @@
             "impact": null,
             "html": "<h3>Bands</h3>",
             "target": [
-              "h3"
+              "section:nth-child(4) > h3"
             ]
           },
           {
@@ -19399,7 +20134,7 @@
             "all": [],
             "none": [],
             "impact": null,
-            "html": "<div class=\"callout\">\n      <p><strong>An honest note:</strong> a fourth adapter, <code>RedXAdapter</code>, is written and implements the interface, but it is not imported or registered in <code>couriers.module.ts</code>. It is built, not wired. Three carriers are in production.</p>\n    </div>",
+            "html": "<div class=\"callout\">\n      <p><strong>An honest note:</strong> a fourth adapter, <code>RedXAdapter</code>, is written and implements the interface, but it is not imported or registered in <code>couriers.module.ts</code>. It is built, not wired. Three carriers are registered.</p>\n    </div>",
             "target": [
               "section:nth-child(5) > .callout"
             ]
@@ -19419,7 +20154,7 @@
             "all": [],
             "none": [],
             "impact": null,
-            "html": "<p><strong>An honest note:</strong> a fourth adapter, <code>RedXAdapter</code>, is written and implements the interface, but it is not imported or registered in <code>couriers.module.ts</code>. It is built, not wired. Three carriers are in production.</p>",
+            "html": "<p><strong>An honest note:</strong> a fourth adapter, <code>RedXAdapter</code>, is written and implements the interface, but it is not imported or registered in <code>couriers.module.ts</code>. It is built, not wired. Three carriers are registered.</p>",
             "target": [
               "section:nth-child(5) > .callout > p"
             ]
@@ -19659,7 +20394,7 @@
             "all": [],
             "none": [],
             "impact": null,
-            "html": "<h2>The numbers</h2>",
+            "html": "<h2>Verified in testing</h2>",
             "target": [
               "#numbers > h2"
             ]
@@ -19699,7 +20434,7 @@
             "all": [],
             "none": [],
             "impact": null,
-            "html": "<p>",
+            "html": "<p><strong>PROshanti is in UAT, not production.</strong> Every figure below is either read from source or produced by running the test suite at commit <code>6232ead</code> — nothing here is a live operational metric, because none exist yet. Production numbers get published after launch.</p>",
             "target": [
               ".numbers-note > p"
             ]
@@ -19719,7 +20454,7 @@
             "all": [],
             "none": [],
             "impact": null,
-            "html": "<strong>Structural facts below are read directly from the source.</strong>",
+            "html": "<strong>PROshanti is in UAT, not production.</strong>",
             "target": [
               ".numbers-note > p > strong"
             ]
@@ -19739,9 +20474,9 @@
             "all": [],
             "none": [],
             "impact": null,
-            "html": "<span class=\"verify\">[VERIFY]</span>",
+            "html": "<code>6232ead</code>",
             "target": [
-              "p > .verify"
+              ".numbers-note > p > code"
             ]
           },
           {
@@ -19799,7 +20534,7 @@
             "all": [],
             "none": [],
             "impact": null,
-            "html": "<thead><tr><th scope=\"col\">Metric</th><th scope=\"col\">Value</th><th scope=\"col\">Source</th></tr></thead>",
+            "html": "<thead><tr><th scope=\"col\">Measure</th><th scope=\"col\">Value</th><th scope=\"col\">How it was produced</th></tr></thead>",
             "target": [
               "#numbers > .tablewrap > table > thead"
             ]
@@ -19819,7 +20554,7 @@
             "all": [],
             "none": [],
             "impact": null,
-            "html": "<tr><th scope=\"col\">Metric</th><th scope=\"col\">Value</th><th scope=\"col\">Source</th></tr>",
+            "html": "<tr><th scope=\"col\">Measure</th><th scope=\"col\">Value</th><th scope=\"col\">How it was produced</th></tr>",
             "target": [
               "#numbers > .tablewrap > table > thead > tr"
             ]
@@ -19839,7 +20574,7 @@
             "all": [],
             "none": [],
             "impact": null,
-            "html": "<th scope=\"col\">Metric</th>",
+            "html": "<th scope=\"col\">Measure</th>",
             "target": [
               "#numbers > .tablewrap > table > thead > tr > th:nth-child(1)"
             ]
@@ -19879,7 +20614,7 @@
             "all": [],
             "none": [],
             "impact": null,
-            "html": "<th scope=\"col\">Source</th>",
+            "html": "<th scope=\"col\">How it was produced</th>",
             "target": [
               "#numbers > .tablewrap > table > thead > tr > th:nth-child(3)"
             ]
@@ -19919,7 +20654,7 @@
             "all": [],
             "none": [],
             "impact": null,
-            "html": "<tr><td>Fraud signals</td><td class=\"num\">14</td><td><code>fraud.service.ts</code></td></tr>",
+            "html": "<tr><td>Fraud signals implemented</td><td class=\"num\">14</td><td><code>SIGNALS</code> in <code>fraud.service.ts</code></td></tr>",
             "target": [
               "#numbers > .tablewrap > table > tbody > tr:nth-child(1)"
             ]
@@ -19939,7 +20674,7 @@
             "all": [],
             "none": [],
             "impact": null,
-            "html": "<td>Fraud signals</td>",
+            "html": "<td>Fraud signals implemented</td>",
             "target": [
               "#numbers > .tablewrap > table > tbody > tr:nth-child(1) > td:nth-child(1)"
             ]
@@ -19979,7 +20714,7 @@
             "all": [],
             "none": [],
             "impact": null,
-            "html": "<td><code>fraud.service.ts</code></td>",
+            "html": "<td><code>SIGNALS</code> in <code>fraud.service.ts</code></td>",
             "target": [
               "#numbers > .tablewrap > table > tbody > tr:nth-child(1) > td:nth-child(3)"
             ]
@@ -19999,9 +20734,9 @@
             "all": [],
             "none": [],
             "impact": null,
-            "html": "<code>fraud.service.ts</code>",
+            "html": "<code>SIGNALS</code>",
             "target": [
-              "tr:nth-child(1) > td:nth-child(3) > code"
+              "tr:nth-child(1) > td:nth-child(3) > code:nth-child(1)"
             ]
           },
           {
@@ -20019,7 +20754,27 @@
             "all": [],
             "none": [],
             "impact": null,
-            "html": "<tr><td>Courier integrations live</td><td class=\"num\">3</td><td><code>couriers.module.ts</code></td></tr>",
+            "html": "<code>fraud.service.ts</code>",
+            "target": [
+              "td:nth-child(3) > code:nth-child(2)"
+            ]
+          },
+          {
+            "any": [
+              {
+                "id": "region",
+                "data": {
+                  "isIframe": false
+                },
+                "relatedNodes": [],
+                "impact": "moderate",
+                "message": "All page content is contained by landmarks"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": null,
+            "html": "<tr><td>Seeded fraud scenarios passing</td><td class=\"num\">55 / 55</td><td><code>jest --testPathPatterns=fraud</code></td></tr>",
             "target": [
               "#numbers > .tablewrap > table > tbody > tr:nth-child(2)"
             ]
@@ -20039,7 +20794,7 @@
             "all": [],
             "none": [],
             "impact": null,
-            "html": "<td>Courier integrations live</td>",
+            "html": "<td>Seeded fraud scenarios passing</td>",
             "target": [
               "#numbers > .tablewrap > table > tbody > tr:nth-child(2) > td:nth-child(1)"
             ]
@@ -20059,7 +20814,7 @@
             "all": [],
             "none": [],
             "impact": null,
-            "html": "<td class=\"num\">3</td>",
+            "html": "<td class=\"num\">55 / 55</td>",
             "target": [
               "#numbers > .tablewrap > table > tbody > tr:nth-child(2) > .num"
             ]
@@ -20079,7 +20834,7 @@
             "all": [],
             "none": [],
             "impact": null,
-            "html": "<td><code>couriers.module.ts</code></td>",
+            "html": "<td><code>jest --testPathPatterns=fraud</code></td>",
             "target": [
               "#numbers > .tablewrap > table > tbody > tr:nth-child(2) > td:nth-child(3)"
             ]
@@ -20099,7 +20854,7 @@
             "all": [],
             "none": [],
             "impact": null,
-            "html": "<code>couriers.module.ts</code>",
+            "html": "<code>jest --testPathPatterns=fraud</code>",
             "target": [
               "tr:nth-child(2) > td:nth-child(3) > code"
             ]
@@ -20119,7 +20874,7 @@
             "all": [],
             "none": [],
             "impact": null,
-            "html": "<tr><td>Test suites passing</td><td class=\"num\">113 / 113</td><td><code>npm test -w api</code></td></tr>",
+            "html": "<tr><td>Delivery-success-meter cases passing</td><td class=\"num\">33 / 33</td><td><code>jest --testPathPatterns=delivery-success-meter</code></td></tr>",
             "target": [
               "#numbers > .tablewrap > table > tbody > tr:nth-child(3)"
             ]
@@ -20139,7 +20894,7 @@
             "all": [],
             "none": [],
             "impact": null,
-            "html": "<td>Test suites passing</td>",
+            "html": "<td>Delivery-success-meter cases passing</td>",
             "target": [
               "#numbers > .tablewrap > table > tbody > tr:nth-child(3) > td:nth-child(1)"
             ]
@@ -20159,7 +20914,7 @@
             "all": [],
             "none": [],
             "impact": null,
-            "html": "<td class=\"num\">113 / 113</td>",
+            "html": "<td class=\"num\">33 / 33</td>",
             "target": [
               "#numbers > .tablewrap > table > tbody > tr:nth-child(3) > .num"
             ]
@@ -20179,7 +20934,7 @@
             "all": [],
             "none": [],
             "impact": null,
-            "html": "<td><code>npm test -w api</code></td>",
+            "html": "<td><code>jest --testPathPatterns=delivery-success-meter</code></td>",
             "target": [
               "#numbers > .tablewrap > table > tbody > tr:nth-child(3) > td:nth-child(3)"
             ]
@@ -20199,7 +20954,7 @@
             "all": [],
             "none": [],
             "impact": null,
-            "html": "<code>npm test -w api</code>",
+            "html": "<code>jest --testPathPatterns=delivery-success-meter</code>",
             "target": [
               "tr:nth-child(3) > td:nth-child(3) > code"
             ]
@@ -20219,7 +20974,7 @@
             "all": [],
             "none": [],
             "impact": null,
-            "html": "<tr><td>Tests passing</td><td class=\"num\">1,274</td><td><code>npm test -w api</code></td></tr>",
+            "html": "<tr><td>Logistics + COD reconciliation cases</td><td class=\"num\">48 / 48</td><td><code>jest --testPathPatterns=logistics</code></td></tr>",
             "target": [
               "#numbers > .tablewrap > table > tbody > tr:nth-child(4)"
             ]
@@ -20239,7 +20994,7 @@
             "all": [],
             "none": [],
             "impact": null,
-            "html": "<td>Tests passing</td>",
+            "html": "<td>Logistics + COD reconciliation cases</td>",
             "target": [
               "#numbers > .tablewrap > table > tbody > tr:nth-child(4) > td:nth-child(1)"
             ]
@@ -20259,7 +21014,7 @@
             "all": [],
             "none": [],
             "impact": null,
-            "html": "<td class=\"num\">1,274</td>",
+            "html": "<td class=\"num\">48 / 48</td>",
             "target": [
               "#numbers > .tablewrap > table > tbody > tr:nth-child(4) > .num"
             ]
@@ -20279,7 +21034,7 @@
             "all": [],
             "none": [],
             "impact": null,
-            "html": "<td><code>npm test -w api</code></td>",
+            "html": "<td><code>jest --testPathPatterns=logistics</code></td>",
             "target": [
               "#numbers > .tablewrap > table > tbody > tr:nth-child(4) > td:nth-child(3)"
             ]
@@ -20299,7 +21054,7 @@
             "all": [],
             "none": [],
             "impact": null,
-            "html": "<code>npm test -w api</code>",
+            "html": "<code>jest --testPathPatterns=logistics</code>",
             "target": [
               "tr:nth-child(4) > td:nth-child(3) > code"
             ]
@@ -20319,7 +21074,7 @@
             "all": [],
             "none": [],
             "impact": null,
-            "html": "<tr><td>Commits</td><td class=\"num\">528</td><td><code>git log</code></td></tr>",
+            "html": "<tr><td>Courier layer cases passing</td><td class=\"num\">140 / 140</td><td><code>jest --testPathPatterns=couriers</code></td></tr>",
             "target": [
               "#numbers > .tablewrap > table > tbody > tr:nth-child(5)"
             ]
@@ -20339,7 +21094,7 @@
             "all": [],
             "none": [],
             "impact": null,
-            "html": "<td>Commits</td>",
+            "html": "<td>Courier layer cases passing</td>",
             "target": [
               "#numbers > .tablewrap > table > tbody > tr:nth-child(5) > td:nth-child(1)"
             ]
@@ -20359,7 +21114,7 @@
             "all": [],
             "none": [],
             "impact": null,
-            "html": "<td class=\"num\">528</td>",
+            "html": "<td class=\"num\">140 / 140</td>",
             "target": [
               "#numbers > .tablewrap > table > tbody > tr:nth-child(5) > .num"
             ]
@@ -20379,7 +21134,7 @@
             "all": [],
             "none": [],
             "impact": null,
-            "html": "<td><code>git log</code></td>",
+            "html": "<td><code>jest --testPathPatterns=couriers</code></td>",
             "target": [
               "#numbers > .tablewrap > table > tbody > tr:nth-child(5) > td:nth-child(3)"
             ]
@@ -20399,7 +21154,7 @@
             "all": [],
             "none": [],
             "impact": null,
-            "html": "<code>git log</code>",
+            "html": "<code>jest --testPathPatterns=couriers</code>",
             "target": [
               "tr:nth-child(5) > td:nth-child(3) > code"
             ]
@@ -20419,7 +21174,7 @@
             "all": [],
             "none": [],
             "impact": null,
-            "html": "<tr><td>Operating day covered</td><td class=\"num\">16.5 h · 2 shifts</td><td>roster</td></tr>",
+            "html": "<tr><td>Courier integrations registered</td><td class=\"num\">3</td><td><code>couriers.module.ts</code></td></tr>",
             "target": [
               "#numbers > .tablewrap > table > tbody > tr:nth-child(6)"
             ]
@@ -20439,7 +21194,7 @@
             "all": [],
             "none": [],
             "impact": null,
-            "html": "<td>Operating day covered</td>",
+            "html": "<td>Courier integrations registered</td>",
             "target": [
               "#numbers > .tablewrap > table > tbody > tr:nth-child(6) > td:nth-child(1)"
             ]
@@ -20459,7 +21214,7 @@
             "all": [],
             "none": [],
             "impact": null,
-            "html": "<td class=\"num\">16.5 h · 2 shifts</td>",
+            "html": "<td class=\"num\">3</td>",
             "target": [
               "#numbers > .tablewrap > table > tbody > tr:nth-child(6) > .num"
             ]
@@ -20479,7 +21234,7 @@
             "all": [],
             "none": [],
             "impact": null,
-            "html": "<td>roster</td>",
+            "html": "<td><code>couriers.module.ts</code></td>",
             "target": [
               "#numbers > .tablewrap > table > tbody > tr:nth-child(6) > td:nth-child(3)"
             ]
@@ -20499,7 +21254,27 @@
             "all": [],
             "none": [],
             "impact": null,
-            "html": "<tr><td>Fraud catch rate</td><td><span class=\"verify\">[VERIFY]</span></td><td>production <code>fraud_checks</code></td></tr>",
+            "html": "<code>couriers.module.ts</code>",
+            "target": [
+              "tr:nth-child(6) > td:nth-child(3) > code"
+            ]
+          },
+          {
+            "any": [
+              {
+                "id": "region",
+                "data": {
+                  "isIframe": false
+                },
+                "relatedNodes": [],
+                "impact": "moderate",
+                "message": "All page content is contained by landmarks"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": null,
+            "html": "<tr><td>Full API suite</td><td class=\"num\">113 suites · 1,274 tests</td><td><code>npm test -w api</code>, exit 0</td></tr>",
             "target": [
               "#numbers > .tablewrap > table > tbody > tr:nth-child(7)"
             ]
@@ -20519,7 +21294,7 @@
             "all": [],
             "none": [],
             "impact": null,
-            "html": "<td>Fraud catch rate</td>",
+            "html": "<td>Full API suite</td>",
             "target": [
               "#numbers > .tablewrap > table > tbody > tr:nth-child(7) > td:nth-child(1)"
             ]
@@ -20539,9 +21314,9 @@
             "all": [],
             "none": [],
             "impact": null,
-            "html": "<td><span class=\"verify\">[VERIFY]</span></td>",
+            "html": "<td class=\"num\">113 suites · 1,274 tests</td>",
             "target": [
-              "#numbers > .tablewrap > table > tbody > tr:nth-child(7) > td:nth-child(2)"
+              "#numbers > .tablewrap > table > tbody > tr:nth-child(7) > .num"
             ]
           },
           {
@@ -20559,27 +21334,7 @@
             "all": [],
             "none": [],
             "impact": null,
-            "html": "<span class=\"verify\">[VERIFY]</span>",
-            "target": [
-              "tr:nth-child(7) > td:nth-child(2) > .verify"
-            ]
-          },
-          {
-            "any": [
-              {
-                "id": "region",
-                "data": {
-                  "isIframe": false
-                },
-                "relatedNodes": [],
-                "impact": "moderate",
-                "message": "All page content is contained by landmarks"
-              }
-            ],
-            "all": [],
-            "none": [],
-            "impact": null,
-            "html": "<td>production <code>fraud_checks</code></td>",
+            "html": "<td><code>npm test -w api</code>, exit 0</td>",
             "target": [
               "#numbers > .tablewrap > table > tbody > tr:nth-child(7) > td:nth-child(3)"
             ]
@@ -20599,7 +21354,7 @@
             "all": [],
             "none": [],
             "impact": null,
-            "html": "<code>fraud_checks</code>",
+            "html": "<code>npm test -w api</code>",
             "target": [
               "tr:nth-child(7) > td:nth-child(3) > code"
             ]
@@ -20619,7 +21374,7 @@
             "all": [],
             "none": [],
             "impact": null,
-            "html": "<tr><td>Reconciliation variance</td><td><span class=\"verify\">[VERIFY]</span></td><td>production COD ledger</td></tr>",
+            "html": "<tr><td>Commits</td><td class=\"num\">528</td><td><code>git log</code></td></tr>",
             "target": [
               "#numbers > .tablewrap > table > tbody > tr:nth-child(8)"
             ]
@@ -20639,7 +21394,7 @@
             "all": [],
             "none": [],
             "impact": null,
-            "html": "<td>Reconciliation variance</td>",
+            "html": "<td>Commits</td>",
             "target": [
               "#numbers > .tablewrap > table > tbody > tr:nth-child(8) > td:nth-child(1)"
             ]
@@ -20659,9 +21414,9 @@
             "all": [],
             "none": [],
             "impact": null,
-            "html": "<td><span class=\"verify\">[VERIFY]</span></td>",
+            "html": "<td class=\"num\">528</td>",
             "target": [
-              "#numbers > .tablewrap > table > tbody > tr:nth-child(8) > td:nth-child(2)"
+              "#numbers > .tablewrap > table > tbody > tr:nth-child(8) > .num"
             ]
           },
           {
@@ -20679,27 +21434,7 @@
             "all": [],
             "none": [],
             "impact": null,
-            "html": "<span class=\"verify\">[VERIFY]</span>",
-            "target": [
-              "tr:nth-child(8) > td:nth-child(2) > .verify"
-            ]
-          },
-          {
-            "any": [
-              {
-                "id": "region",
-                "data": {
-                  "isIframe": false
-                },
-                "relatedNodes": [],
-                "impact": "moderate",
-                "message": "All page content is contained by landmarks"
-              }
-            ],
-            "all": [],
-            "none": [],
-            "impact": null,
-            "html": "<td>production COD ledger</td>",
+            "html": "<td><code>git log</code></td>",
             "target": [
               "#numbers > .tablewrap > table > tbody > tr:nth-child(8) > td:nth-child(3)"
             ]
@@ -20719,7 +21454,27 @@
             "all": [],
             "none": [],
             "impact": null,
-            "html": "<tr><td>Delivery success rate</td><td><span class=\"verify\">[VERIFY]</span></td><td>courier webhooks</td></tr>",
+            "html": "<code>git log</code>",
+            "target": [
+              "tr:nth-child(8) > td:nth-child(3) > code"
+            ]
+          },
+          {
+            "any": [
+              {
+                "id": "region",
+                "data": {
+                  "isIframe": false
+                },
+                "relatedNodes": [],
+                "impact": "moderate",
+                "message": "All page content is contained by landmarks"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": null,
+            "html": "<tr><td>Operating day covered</td><td class=\"num\">16.5 h · 2 shifts</td><td>roster</td></tr>",
             "target": [
               "#numbers > .tablewrap > table > tbody > tr:nth-child(9)"
             ]
@@ -20739,7 +21494,7 @@
             "all": [],
             "none": [],
             "impact": null,
-            "html": "<td>Delivery success rate</td>",
+            "html": "<td>Operating day covered</td>",
             "target": [
               "#numbers > .tablewrap > table > tbody > tr:nth-child(9) > td:nth-child(1)"
             ]
@@ -20759,9 +21514,9 @@
             "all": [],
             "none": [],
             "impact": null,
-            "html": "<td><span class=\"verify\">[VERIFY]</span></td>",
+            "html": "<td class=\"num\">16.5 h · 2 shifts</td>",
             "target": [
-              "#numbers > .tablewrap > table > tbody > tr:nth-child(9) > td:nth-child(2)"
+              "#numbers > .tablewrap > table > tbody > tr:nth-child(9) > .num"
             ]
           },
           {
@@ -20779,29 +21534,409 @@
             "all": [],
             "none": [],
             "impact": null,
-            "html": "<span class=\"verify\">[VERIFY]</span>",
-            "target": [
-              "tr:nth-child(9) > td:nth-child(2) > .verify"
-            ]
-          },
-          {
-            "any": [
-              {
-                "id": "region",
-                "data": {
-                  "isIframe": false
-                },
-                "relatedNodes": [],
-                "impact": "moderate",
-                "message": "All page content is contained by landmarks"
-              }
-            ],
-            "all": [],
-            "none": [],
-            "impact": null,
-            "html": "<td>courier webhooks</td>",
+            "html": "<td>roster</td>",
             "target": [
               "#numbers > .tablewrap > table > tbody > tr:nth-child(9) > td:nth-child(3)"
+            ]
+          },
+          {
+            "any": [
+              {
+                "id": "region",
+                "data": {
+                  "isIframe": false
+                },
+                "relatedNodes": [],
+                "impact": "moderate",
+                "message": "All page content is contained by landmarks"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": null,
+            "html": "<h3>What the 55 fraud scenarios actually assert</h3>",
+            "target": [
+              "#numbers > h3"
+            ]
+          },
+          {
+            "any": [
+              {
+                "id": "region",
+                "data": {
+                  "isIframe": false
+                },
+                "relatedNodes": [],
+                "impact": "moderate",
+                "message": "All page content is contained by landmarks"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": null,
+            "html": "<p>They are not a catch rate against real fraud — there is no real fraud yet to catch. They assert that a constructed order produces the band the specification says it should, which is the part that has to be right before any live number means anything.</p>",
+            "target": [
+              "#numbers > p"
+            ]
+          },
+          {
+            "any": [
+              {
+                "id": "region",
+                "data": {
+                  "isIframe": false
+                },
+                "relatedNodes": [],
+                "impact": "moderate",
+                "message": "All page content is contained by landmarks"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": null,
+            "html": "<ul>",
+            "target": [
+              "#numbers > ul"
+            ]
+          },
+          {
+            "any": [
+              {
+                "id": "region",
+                "data": {
+                  "isIframe": false
+                },
+                "relatedNodes": [],
+                "impact": "moderate",
+                "message": "All page content is contained by landmarks"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": null,
+            "html": "<li>Every band boundary, individually: <code>0 → green</code>, <code>30 → green</code> (ceiling), <code>31 → yellow</code> (floor), <code>60 → yellow</code> (ceiling), <code>61 → red</code> (floor), and a combined score above 100 clamped to 100.</li>",
+            "target": [
+              "#numbers > ul > li:nth-child(1)"
+            ]
+          },
+          {
+            "any": [
+              {
+                "id": "region",
+                "data": {
+                  "isIframe": false
+                },
+                "relatedNodes": [],
+                "impact": "moderate",
+                "message": "All page content is contained by landmarks"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": null,
+            "html": "<code>0 → green</code>",
+            "target": [
+              "li:nth-child(1) > code:nth-child(1)"
+            ]
+          },
+          {
+            "any": [
+              {
+                "id": "region",
+                "data": {
+                  "isIframe": false
+                },
+                "relatedNodes": [],
+                "impact": "moderate",
+                "message": "All page content is contained by landmarks"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": null,
+            "html": "<code>30 → green</code>",
+            "target": [
+              "li:nth-child(1) > code:nth-child(2)"
+            ]
+          },
+          {
+            "any": [
+              {
+                "id": "region",
+                "data": {
+                  "isIframe": false
+                },
+                "relatedNodes": [],
+                "impact": "moderate",
+                "message": "All page content is contained by landmarks"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": null,
+            "html": "<code>31 → yellow</code>",
+            "target": [
+              "li:nth-child(1) > code:nth-child(3)"
+            ]
+          },
+          {
+            "any": [
+              {
+                "id": "region",
+                "data": {
+                  "isIframe": false
+                },
+                "relatedNodes": [],
+                "impact": "moderate",
+                "message": "All page content is contained by landmarks"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": null,
+            "html": "<code>60 → yellow</code>",
+            "target": [
+              "code:nth-child(4)"
+            ]
+          },
+          {
+            "any": [
+              {
+                "id": "region",
+                "data": {
+                  "isIframe": false
+                },
+                "relatedNodes": [],
+                "impact": "moderate",
+                "message": "All page content is contained by landmarks"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": null,
+            "html": "<code>61 → red</code>",
+            "target": [
+              "code:nth-child(5)"
+            ]
+          },
+          {
+            "any": [
+              {
+                "id": "region",
+                "data": {
+                  "isIframe": false
+                },
+                "relatedNodes": [],
+                "impact": "moderate",
+                "message": "All page content is contained by landmarks"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": null,
+            "html": "<li>Every signal's point value in isolation, including the cases where it must <em>not</em> fire — <code>new_high_value</code> stays silent at exactly ৳5,000 because the rule is <code>&gt; 5000</code>, and stays silent for a customer with prior orders.</li>",
+            "target": [
+              "#numbers > ul > li:nth-child(2)"
+            ]
+          },
+          {
+            "any": [
+              {
+                "id": "region",
+                "data": {
+                  "isIframe": false
+                },
+                "relatedNodes": [],
+                "impact": "moderate",
+                "message": "All page content is contained by landmarks"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": null,
+            "html": "<em>not</em>",
+            "target": [
+              "em"
+            ]
+          },
+          {
+            "any": [
+              {
+                "id": "region",
+                "data": {
+                  "isIframe": false
+                },
+                "relatedNodes": [],
+                "impact": "moderate",
+                "message": "All page content is contained by landmarks"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": null,
+            "html": "<code>new_high_value</code>",
+            "target": [
+              "li:nth-child(2) > code:nth-child(2)"
+            ]
+          },
+          {
+            "any": [
+              {
+                "id": "region",
+                "data": {
+                  "isIframe": false
+                },
+                "relatedNodes": [],
+                "impact": "moderate",
+                "message": "All page content is contained by landmarks"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": null,
+            "html": "<code>&gt; 5000</code>",
+            "target": [
+              "li:nth-child(2) > code:nth-child(3)"
+            ]
+          },
+          {
+            "any": [
+              {
+                "id": "region",
+                "data": {
+                  "isIframe": false
+                },
+                "relatedNodes": [],
+                "impact": "moderate",
+                "message": "All page content is contained by landmarks"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": null,
+            "html": "<li>Behavioural consequences: a red order auto-blacklists the phone and IP, holds the order and notifies managers; a red score on an already-progressed order records without rewinding it.</li>",
+            "target": [
+              "#numbers > ul > li:nth-child(3)"
+            ]
+          },
+          {
+            "any": [
+              {
+                "id": "region",
+                "data": {
+                  "isIframe": false
+                },
+                "relatedNodes": [],
+                "impact": "moderate",
+                "message": "All page content is contained by landmarks"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": null,
+            "html": "<li>Failure modes: a broken order row returns null rather than throwing, and the rules loader <strong>fails open to the in-code constants</strong> when the <code>fraud_rules</code> table is unreachable — so a database problem cannot silently disable fraud scoring.</li>",
+            "target": [
+              "li:nth-child(4)"
+            ]
+          },
+          {
+            "any": [
+              {
+                "id": "region",
+                "data": {
+                  "isIframe": false
+                },
+                "relatedNodes": [],
+                "impact": "moderate",
+                "message": "All page content is contained by landmarks"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": null,
+            "html": "<strong>fails open to the in-code constants</strong>",
+            "target": [
+              "li:nth-child(4) > strong"
+            ]
+          },
+          {
+            "any": [
+              {
+                "id": "region",
+                "data": {
+                  "isIframe": false
+                },
+                "relatedNodes": [],
+                "impact": "moderate",
+                "message": "All page content is contained by landmarks"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": null,
+            "html": "<code>fraud_rules</code>",
+            "target": [
+              "li:nth-child(4) > code"
+            ]
+          },
+          {
+            "any": [
+              {
+                "id": "region",
+                "data": {
+                  "isIframe": false
+                },
+                "relatedNodes": [],
+                "impact": "moderate",
+                "message": "All page content is contained by landmarks"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": null,
+            "html": "<div class=\"callout\">",
+            "target": [
+              "#numbers > .callout"
+            ]
+          },
+          {
+            "any": [
+              {
+                "id": "region",
+                "data": {
+                  "isIframe": false
+                },
+                "relatedNodes": [],
+                "impact": "moderate",
+                "message": "All page content is contained by landmarks"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": null,
+            "html": "<p>",
+            "target": [
+              "#numbers > .callout > p"
+            ]
+          },
+          {
+            "any": [
+              {
+                "id": "region",
+                "data": {
+                  "isIframe": false
+                },
+                "relatedNodes": [],
+                "impact": "moderate",
+                "message": "All page content is contained by landmarks"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": null,
+            "html": "<strong>Cut rather than guessed.</strong>",
+            "target": [
+              "#numbers > .callout > p > strong"
             ]
           },
           {
@@ -21132,7 +22267,7 @@
             ],
             "none": [],
             "impact": null,
-            "html": "<th scope=\"col\">Metric</th>",
+            "html": "<th scope=\"col\">Measure</th>",
             "target": [
               "#numbers > .tablewrap > table > thead > tr > th:nth-child(1)"
             ]
@@ -21182,7 +22317,7 @@
             ],
             "none": [],
             "impact": null,
-            "html": "<th scope=\"col\">Source</th>",
+            "html": "<th scope=\"col\">How it was produced</th>",
             "target": [
               "#numbers > .tablewrap > table > thead > tr > th:nth-child(3)"
             ]
