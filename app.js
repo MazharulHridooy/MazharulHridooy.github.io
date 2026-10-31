@@ -58,4 +58,111 @@
     render();
   });
   render();
+
+  // Dialer demo. Mirrors the Smart Calling queue: callbacks, then new orders, then retries; 3 tries a day.
+  const MAX_TRIES = 3;
+  const RANK = { callback: 0, new: 1, retry: 2 };
+  const REASON = { callback: 'CALLBACK DUE', new: 'NEW ORDER', retry: 'RETRY' };
+  const SAMPLE = [
+    { name: 'Nusrat J.', order: '#1042', total: '৳1,850', district: 'Dhaka', reason: 'callback', tries: 0 },
+    { name: 'Rafiq H.', order: '#1051', total: '৳990', district: 'Rajshahi', reason: 'new', tries: 0 },
+    { name: 'Sadia A.', order: '#1050', total: '৳2,400', district: 'Khulna', reason: 'new', tries: 0, cancels: true },
+    { name: 'Tanvir K.', order: '#1049', total: '৳1,290', district: 'Sylhet', reason: 'new', tries: 0 },
+    { name: 'Mitu R.', order: '#1037', total: '৳760', district: 'Barishal', reason: 'retry', tries: 1 }
+  ];
+  const dialer = document.getElementById('dialer');
+  const outs = document.getElementById('outs');
+  const again = document.getElementById('again');
+  const byId = id => document.getElementById(id);
+  let calls, tally;
+
+  function ordered(list){ return [...list].sort((a,b)=> RANK[a.reason] - RANK[b.reason]); }
+
+  function showCall(){
+    const c = calls[0];
+    outs.hidden = !c;
+    again.hidden = Boolean(c);
+    byId('callReason').textContent = c ? REASON[c.reason] : 'QUEUE CLEAR';
+    byId('callTries').textContent = c ? `Try ${c.tries+1} of ${MAX_TRIES} today` : '';
+    byId('callName').textContent = c ? c.name : 'Nobody left to call';
+    byId('callMeta').textContent = c ? `${c.order} · ${c.total} · ${c.district}` : 'On the real floor, new orders keep arriving.';
+    byId('callWarn').textContent = c && c.cancels ? 'This customer cancels often.' : '';
+    byId('tConfirmed').textContent = tally.confirmed;
+    byId('tLater').textContent = tally.later;
+    byId('tOut').textContent = tally.out;
+    byId('upNext').replaceChildren(...calls.slice(1).map(q=>{
+      const li = document.createElement('li');
+      const tag = document.createElement('span');
+      li.textContent = q.name;
+      tag.textContent = REASON[q.reason].toLowerCase();
+      li.append(tag);
+      return li;
+    }));
+  }
+
+  function logOutcome(outcome){
+    const [c, ...rest] = calls;
+    if(!c) return;
+    const note = {
+      confirmed: `${c.order} confirmed. The next customer would ring in 3 seconds.`,
+      later: `${c.name} leaves the queue until the time the agent picked.`,
+      wrong: `${c.order} leaves the queue as a wrong number.`,
+      lost: `${c.order} cancelled, and the agent records why.`
+    };
+    if(outcome === 'noanswer'){
+      const tries = c.tries + 1;
+      if(tries < MAX_TRIES){
+        calls = ordered([...rest, {...c, reason:'retry', tries}]);
+        byId('callNote').textContent = `No answer from ${c.name}. Back in the queue as a retry, after 30 minutes.`;
+      } else {
+        calls = rest;
+        tally = {...tally, out: tally.out+1};
+        byId('callNote').textContent = `Three tries today, so ${c.order} waits for tomorrow.`;
+      }
+    } else {
+      calls = rest;
+      tally = {
+        confirmed: tally.confirmed + (outcome==='confirmed'?1:0),
+        later: tally.later + (outcome==='later'?1:0),
+        out: tally.out + (outcome==='wrong'||outcome==='lost'?1:0)
+      };
+      byId('callNote').textContent = note[outcome];
+    }
+    showCall();
+    if(!calls.length) again.focus();
+  }
+
+  function startQueue(){
+    calls = ordered(SAMPLE);
+    tally = { confirmed:0, later:0, out:0 };
+    showCall();
+  }
+
+  outs.addEventListener('click', e=>{
+    const btn = e.target.closest('button');
+    if(btn) logOutcome(btn.dataset.o);
+  });
+  outs.addEventListener('keydown', e=>{
+    const btn = outs.querySelectorAll('button')[Number(e.key)-1];
+    if(btn && !e.ctrlKey && !e.metaKey && !e.altKey){ e.preventDefault(); logOutcome(btn.dataset.o); }
+  });
+  again.addEventListener('click', ()=>{
+    startQueue();
+    byId('callNote').textContent = 'Queue reloaded.';
+    outs.querySelector('button').focus();
+  });
+  dialer.hidden = false;
+  startQueue();
+
+  // Marks the section in view in the nav.
+  const navLinks = [...document.querySelectorAll('.nav-links a')];
+  const spy = new IntersectionObserver(entries=>{
+    entries.filter(en=>en.isIntersecting).forEach(en=>{
+      navLinks.forEach(a=>{
+        if(a.getAttribute('href') === `#${en.target.id}`) a.setAttribute('aria-current','true');
+        else a.removeAttribute('aria-current');
+      });
+    });
+  }, { rootMargin:'-30% 0px -65% 0px' });
+  navLinks.forEach(a=>{ const t = document.querySelector(a.getAttribute('href')); if(t) spy.observe(t); });
 })();

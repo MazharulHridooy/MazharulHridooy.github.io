@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Mazharul Islam Hridoy — Sales Operations Lead, Dhaka</title>
-<meta name="description" content="Sales operations lead in Dhaka. Runs a two-shift cash-on-delivery sales floor and built the CRM it runs on: fraud scoring, couriers, call center and team KPIs.">
+<meta name="description" content="Sales operations lead in Dhaka. Runs a two-shift cash-on-delivery sales floor and built the CRM it runs on: fraud scoring, couriers, calling automation and team KPIs.">
 <link rel="canonical" href="https://mazharulhridooy.github.io/">
 <meta name="theme-color" content="#f6f3ec" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#14161a" media="(prefers-color-scheme: dark)">
@@ -104,7 +104,7 @@ nav.site-nav{position:sticky;top:0;z-index:30;background:var(--bg);border-bottom
 .nav-brand{font-weight:700;text-decoration:none;white-space:nowrap}
 .nav-links{display:flex;gap:24px;list-style:none;font-size:14px}
 .nav-links a{color:var(--dim);text-decoration:none;display:inline-block;padding:8px 0}
-.nav-links a:hover{color:var(--accent)}
+.nav-links a:hover,.nav-links a[aria-current]{color:var(--accent)}
 @media (max-width:560px){.nav-links{gap:14px}.nav-links .opt{display:none}}
 
 .hero{padding:64px 0 48px;display:grid;grid-template-columns:1.5fr 1fr;gap:56px;align-items:end}
@@ -145,6 +145,7 @@ section{padding:96px 0 0}
 .kicker{font-family:var(--mono);font-size:12.5px;color:var(--muted);margin-bottom:8px}
 h2{font-size:clamp(25px,3.2vw,34px);line-height:1.15;letter-spacing:-0.02em;margin-bottom:12px;text-wrap:balance}
 .intro{color:var(--dim);max-width:62ch;margin-bottom:28px;font-size:17px}
+.demo-title{font-size:21px;letter-spacing:-0.01em;margin-bottom:12px;scroll-margin-top:72px}
 
 .modules{border-top:1px solid var(--rule);list-style:none;counter-reset:step}
 .modules li{counter-increment:step;display:grid;grid-template-columns:32px 150px 1fr;gap:12px;padding:14px 0;border-bottom:1px solid var(--rule)}
@@ -156,13 +157,51 @@ h2{font-size:clamp(25px,3.2vw,34px);line-height:1.15;letter-spacing:-0.02em;marg
 .stack{font-family:var(--mono);font-size:13px;color:var(--muted);margin:16px 0 20px}
 .textlink{font-weight:700;color:var(--accent)}
 
+.st{display:inline-block;font-family:var(--mono);font-size:11.5px;font-weight:400;padding:1px 7px;margin-left:8px;vertical-align:1px;white-space:nowrap}
+.st.live{background:var(--green-bg);color:var(--green)}
+.st.built{background:var(--yellow-bg);color:var(--yellow)}
+.legend{font-size:14px;color:var(--dim);margin-bottom:20px}
+.legend .st{margin:0 4px 0 0}
+.legend .st.built{margin-left:12px}
+.flow{list-style:none;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:48px;border-top:1px solid var(--rule);margin-bottom:40px}
+.flow li{padding:18px 0;border-bottom:1px solid var(--rule)}
+.flow h3{font-size:17px;line-height:1.3;margin-bottom:6px}
+.flow p{color:var(--dim);font-size:15px}
+@media (max-width:760px){.flow{grid-template-columns:1fr}}
+
+.dialer{display:grid;grid-template-columns:1.6fr 1fr;background:var(--surface);border:1px solid var(--rule)}
+@media (max-width:760px){.dialer{grid-template-columns:1fr}}
+.dialer[hidden]{display:none}
+.call{padding:24px;min-width:0}
+.call-top{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px;font-family:var(--mono);font-size:12.5px;color:var(--muted);margin-bottom:12px}
+.call-name{font-size:28px;font-weight:700;letter-spacing:-0.02em;line-height:1.2}
+.call-meta{color:var(--dim);margin-bottom:6px}
+.call-warn{font-size:14px;color:var(--red);min-height:22px;margin-bottom:12px}
+.outs{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:8px}
+.outs button,.again{font:inherit;font-size:14.5px;font-weight:700;text-align:left;padding:10px 12px;min-height:44px;background:transparent;color:var(--ink);border:1px solid var(--rule);cursor:pointer}
+.outs button:hover,.again:hover{border-color:var(--accent);color:var(--accent)}
+.outs button:first-child{background:var(--accent);border-color:var(--accent);color:var(--on-accent)}
+.outs button:first-child:hover{background:var(--ink);border-color:var(--ink);color:var(--bg)}
+.outs kbd{font-family:var(--mono);font-weight:400;font-size:12.5px;margin-right:8px;opacity:.8}
+.outs small{display:block;font-weight:400;font-size:12.5px;opacity:.85}
+.call-note{font-size:14px;color:var(--dim);margin-top:14px;min-height:44px}
+.next{padding:24px;border-left:1px solid var(--rule);min-width:0}
+@media (max-width:760px){.next{border-left:0;border-top:1px solid var(--rule)}}
+.next h3{font-size:15px;margin-bottom:8px}
+.next ol{list-style:none;min-height:150px}
+.next li{display:flex;justify-content:space-between;gap:12px;padding:7px 0;border-bottom:1px solid var(--rule);font-size:14.5px}
+.next li span{font-family:var(--mono);font-size:12.5px;color:var(--muted);white-space:nowrap}
+.tally{display:grid;grid-template-columns:repeat(3,1fr);margin-top:16px;font-size:13px;color:var(--dim)}
+.tally b{display:block;font-family:var(--mono);font-size:22px;color:var(--ink)}
+.fineprint{font-size:13.5px;color:var(--muted);margin-top:10px}
+
 .demo{display:grid;grid-template-columns:1.5fr 1fr;gap:0;background:var(--surface);border:1px solid var(--rule)}
 @media (max-width:760px){.demo{grid-template-columns:1fr}}
 .signals{padding:20px;border:0;min-width:0}
 .signals legend{float:left;width:100%;font-weight:700;margin-bottom:12px}
 .signals legend+*{clear:both}
 .presets{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:12px}
-.presets button{font:inherit;font-size:13.5px;padding:7px 12px;min-height:36px;background:transparent;color:var(--ink);border:1px solid var(--rule);cursor:pointer}
+.presets button{font:inherit;font-size:13.5px;padding:7px 12px;min-height:44px;background:transparent;color:var(--ink);border:1px solid var(--rule);cursor:pointer}
 .presets button:hover{border-color:var(--accent);color:var(--accent)}
 .sig{display:flex;align-items:flex-start;gap:10px;padding:6px 0;font-size:14.5px;cursor:pointer;line-height:1.4}
 .sig input{width:18px;height:18px;margin-top:1px;flex:none;accent-color:var(--accent)}
@@ -206,10 +245,11 @@ h2{font-size:clamp(25px,3.2vw,34px);line-height:1.15;letter-spacing:-0.02em;marg
 footer{padding:20px 0;font-size:13px;color:var(--muted)}
 
 @media print{
+  .modules li:first-child,.modules li:nth-child(n+7):not(:nth-child(8)){display:none}
   @page{size:A4;margin:10mm 13mm}
   :root{--bg:#fff;--surface:#fff;--ink:#111;--dim:#333;--muted:#555;--rule:#bbb;--accent:#111}
   html,body{font-size:12px;line-height:1.4;background:#fff;color:#111}
-  nav.site-nav,.skip-link,.floor,.cta,#try,#how,.textlink,footer,.intro.web-only{display:none !important}
+  nav.site-nav,.skip-link,.floor,.cta,#calling,#try,#how,.textlink,footer,.intro.web-only,.st,.legend{display:none !important}
   .hero{display:block;padding:0 0 8px}
   .wrap{padding:0;max-width:none}
   .id{gap:10px;margin-bottom:4px}.id img{width:48px;height:48px;outline:0;border:0}
@@ -217,7 +257,7 @@ footer{padding:20px 0;font-size:13px;color:var(--muted)}
   h1{font-size:19px;margin-bottom:6px}
   .lede{font-size:12.5px;margin:0;max-width:none}
   .facts{margin-bottom:0}.fact{padding:6px 8px}.fact b{font-size:16px}.fact span{font-size:11px;margin:0}
-  section{padding:12px 0 0}
+  section{padding:10px 0 0}
   .modules small{display:none}
   .facts{display:none}
   .split{display:block}
@@ -251,8 +291,9 @@ footer{padding:20px 0;font-size:13px;color:var(--muted)}
     <a href="#top" class="nav-brand">Mazharul Hridoy</a>
     <ul class="nav-links">
       <li><a href="#work">Work</a></li>
-      <li class="opt"><a href="#try">Try it</a></li>
-      <li><a href="#experience">Experience</a></li>
+      <li><a href="#calling">Calling</a></li>
+      <li class="opt"><a href="#try">Fraud demo</a></li>
+      <li class="opt"><a href="#experience">Experience</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
   </div>
@@ -272,7 +313,7 @@ footer{padding:20px 0;font-size:13px;color:var(--muted)}
       <p class="lede">TL &amp; Sales Operations Manager at Proshanti Shop. I own the targets, the courier numbers and two shifts across a 15-hour day. When the tools got in the way, I built better ones, and my CRM is now live in daily use.</p>
       <div class="cta">
         <a href="case-study.html" class="btn btn-primary">Read the CRM case study</a>
-        <a href="mailto:mazharulhridoy.pro@gmail.com" class="btn">Email me</a>
+        <a href="#dialer-demo" class="btn">Try the dialer</a>
         <a href="cv.pdf" class="btn" download="Mazharul-Hridoy-CV.pdf">Download CV</a>
       </div>
     </div>
@@ -306,18 +347,68 @@ footer{padding:20px 0;font-size:13px;color:var(--muted)}
     <div>
     <p class="intro web-only">With cash on delivery, the customer risks nothing and you pay for the courier trip before you know the order is real. Spreadsheets couldn't keep up with that, so I replaced them.</p>
     <ol class="modules">
-      <li><b>Orders and fraud</b><span>Scores every order on 14 signals and holds the risky ones before a courier fee is spent.<small>Live order board · Scan station · Stuck-order queue · Blocklist · Approvals</small></span></li>
-      <li><b>Couriers</b><span>Steadfast, Pathao and Paperfly in one place, so carriers can be compared without three dashboards.<small>Signed status webhooks · Courier health · Returns matched by tracking code</small></span></li>
-      <li><b>Call center</b><span>Agents call from the browser through our own Asterisk phone system, with every call tied to the customer.<small>Browser softphone · Call logs · Recordings · Missed-call list</small></span></li>
-      <li><b>Cash and ad spend</b><span>COD reconciliation checks what couriers pay us against what our records say they owe.<small>Courier payout checks · Ad spend and ROAS · Finance · Commissions</small></span></li>
-      <li><b>Customers</b><span>WhatsApp and Messenger share one inbox, and a retention team calls past buyers from the same system.<small>Customer history · Retention calling · Support tickets · Coupons</small></span></li>
-      <li><b>Team performance</b><span>KPIs score orders weeks after confirmation, so an order that comes back doesn't count as a win.<small>Punch-in attendance · Leave · Payslips · HR files · KPI tiers</small></span></li>
-      <li><b>Control and recovery</b><span>Sales staff see masked addresses, the owner's login can view but not change, and a bad release can be rolled back.<small>Role-based access · Audit log · Recycle bin · Backups · Smoke tests</small></span></li>
+      <li><b>Order intake</b><span>Website orders sync in on their own, unfinished checkouts become orders the team can recover, and new orders are shared out to whoever is taking them.<small>WooCommerce sync · One source per channel · Intake on/off switch · No-code automation rules</small></span></li>
+      <li><b>Orders and fraud</b><span>Scores every order on 14 signals and holds the risky ones before a courier fee is spent.<small>Live order board · Scan station · Stuck-order queue · Duplicate rule · Courier success check · Blocklist · Approvals</small></span></li>
+      <li><b>Calling automation</b><span>A shared dial queue decides who gets called next, and agents work it from a browser phone on our own Asterisk system.<small>Smart Calling · Softphone · Screen pop · Recordings · Retention queue · Robot Call · Missed-call SMS</small></span></li>
+      <li><b>Couriers and delivery</b><span>Steadfast, Pathao and Paperfly in one place, so carriers can be compared without three dashboards.<small>Bulk booking without double parcels · Signed status webhooks · Courier health · Delivery trips and manifests · Returns by tracking code</small></span></li>
+      <li><b>Cash and ad spend</b><span>COD reconciliation checks what couriers pay us against what our records say they owe, month by month.<small>Steadfast payout check · Partial deliveries · Spend and ROAS per ad account · Hourly ad watch · Finance · Commissions</small></span></li>
+      <li><b>Customers and chat</b><span>Customer history sits behind every call and order, and WhatsApp, Messenger and Instagram come into one Live Chat inbox.<small>Support tickets · Coupons · VIP customers · AI reply agent with handoff to a person (waiting on Meta's app review)</small></span></li>
+      <li><b>Stock and buying</b><span>Packs and combos take stock from their parts, and the restock report shows what to buy before it runs out.<small>Purchase orders · Suppliers · Stock adjustments · Branded invoices and parcel stickers</small></span></li>
+      <li><b>Team performance</b><span>KPIs score orders weeks after confirmation, so an order that comes back doesn't count as a win.<small>Punch-in attendance · Leave · Payslips · HR files · KPI tiers · Reports by employee · Owner's morning brief</small></span></li>
+      <li><b>Control and recovery</b><span>Sales staff see masked addresses, the owner's login can view but not change, and a bad release can be rolled back.<small>Role-based access · Audit log · Recycle bin · Backup alerts · Health page · Smoke tests</small></span></li>
     </ol>
-    <p class="stack">NestJS · Next.js · PostgreSQL · Redis · Asterisk · 103 screens · 66 API controllers · 168 database migrations · 264 test files · 900+ commits</p>
+    <p class="stack">NestJS · Next.js · PostgreSQL · Redis · Asterisk · 103 screens · 66 API controllers · 124 database migrations · 268 test files · 900+ commits</p>
     <a class="textlink" href="case-study.html">How it was built, and what I'd do differently →</a>
     </div>
     </div>
+  </section>
+
+  <section id="calling">
+    <p class="kicker">CALLING AUTOMATION</p>
+    <h2>Agents don't choose who to call next. The system does.</h2>
+    <p class="intro">A cash-on-delivery order isn't real until someone confirms it by phone. So calling is built as a pipeline, from the first ring to the customer who hasn't ordered in months.</p>
+    <p class="legend"><span class="st live">Live</span>in daily use <span class="st built">Built</span>finished and tested in code, not switched on yet</p>
+    <ol class="flow">
+      <li><h3>Smart Calling <span class="st live">Live</span></h3><p>One shared queue for the whole floor: callbacks that are due, then new orders, newest first, then no-answers after 30 minutes. Three tries a day, then the order waits for tomorrow.</p></li>
+      <li><h3>No two agents on one customer <span class="st live">Live</span></h3><p>Pulling a call claims it for three minutes. The order's status is read again before dialling, and agents are warned when a customer cancels often.</p></li>
+      <li><h3>One key per outcome <span class="st live">Live</span></h3><p>Keys 1 to 5 log the result as that agent and move the order. In Power mode the next customer rings three seconds later.</p></li>
+      <li><h3>Browser softphone <span class="st live">Live</span></h3><p>Calls run through our own Asterisk system. An incoming call opens the customer's open orders beside the page, so the agent can confirm without leaving it.</p></li>
+      <li><h3>Recordings and call log <span class="st live">Live</span></h3><p>Every call is logged with its recording and tied to the customer. Missed calls get their own list, and call-back reminders appear in the phone.</p></li>
+      <li><h3>Coverage alerts <span class="st live">Live</span></h3><p>Supervisors get a banner when too few phones are online, and an alert with sound when a customer's call goes unanswered.</p></li>
+      <li><h3>Retention queue <span class="st live">Live</span></h3><p>Customers with no order in 60 days come back as calls. A later order is credited to the agent who called, within a set window.</p></li>
+      <li><h3>Robot Call <span class="st built">Built</span></h3><p>Pending orders no agent has reached get an automated call with a recorded message. Pressing 1 confirms the order, and pressing 2 asks for a person.</p></li>
+      <li><h3>Missed-call SMS <span class="st built">Built</span></h3><p>A caller nobody answered gets one text a day, so the call isn't simply lost.</p></li>
+      <li><h3>Campaign dialling <span class="st built">Built</span></h3><p>A pacing engine dials only as many numbers as there are free agents, so nobody picks up to silence. If the agent's browser has gone, the call is never placed.</p></li>
+    </ol>
+
+    <h3 class="demo-title" id="dialer-demo">Work the queue yourself</h3>
+    <div class="dialer" id="dialer" hidden>
+      <div class="call">
+        <div class="call-top"><span id="callReason"></span><span id="callTries"></span></div>
+        <p class="call-name" id="callName"></p>
+        <p class="call-meta" id="callMeta"></p>
+        <p class="call-warn" id="callWarn"></p>
+        <div class="outs" id="outs" role="group" aria-label="Call outcome">
+          <button type="button" data-o="confirmed" aria-keyshortcuts="1"><kbd>1</kbd>Confirm<small>Order moves to confirmed</small></button>
+          <button type="button" data-o="later" aria-keyshortcuts="2"><kbd>2</kbd>Call later<small>Becomes a callback</small></button>
+          <button type="button" data-o="noanswer" aria-keyshortcuts="3"><kbd>3</kbd>No answer<small>Retry in 30 min</small></button>
+          <button type="button" data-o="wrong" aria-keyshortcuts="4"><kbd>4</kbd>Wrong number<small>Leaves the queue</small></button>
+          <button type="button" data-o="lost" aria-keyshortcuts="5"><kbd>5</kbd>Not interested<small>Cancels the order</small></button>
+        </div>
+        <button type="button" class="again" id="again" hidden>Start the queue again</button>
+        <p class="call-note" id="callNote" aria-live="polite">Click an outcome. Once a button has focus, keys 1 to 5 work too.</p>
+      </div>
+      <div class="next">
+        <h3>Up next</h3>
+        <ol id="upNext"></ol>
+        <div class="tally">
+          <div><b id="tConfirmed">0</b>Confirmed</div>
+          <div><b id="tLater">0</b>Callbacks</div>
+          <div><b id="tOut">0</b>Closed</div>
+        </div>
+      </div>
+    </div>
+    <p class="fineprint">Sample customers, real queue rules. The demo skips the 30-minute wait and places no calls.</p>
   </section>
 
   <section id="try">
@@ -383,6 +474,7 @@ footer{padding:20px 0;font-size:13px;color:var(--muted)}
           <li>Own sales targets, conversion rates and daily output across two shifts and a 15-hour operating day</li>
           <li>Built and rolled out the in-house CRM that now handles orders, couriers, calls and team performance</li>
           <li>Moved the call center to a browser softphone on our own phone system, with call logs and recordings</li>
+          <li>Built Smart Calling, a shared dial queue that sets who gets called next and stops two agents ringing one customer</li>
           <li>Run courier performance reporting across Steadfast, Pathao and Paperfly</li>
           <li>Automated multi-file reporting with Power Query, replacing manual consolidation with a single refresh</li>
           <li>Trained the team on the CRM and documented task ownership, so daily output doesn't depend on direct supervision</li>
@@ -436,7 +528,7 @@ footer{padding:20px 0;font-size:13px;color:var(--muted)}
     <div>
     <div class="skills">
       <div><h3>Running operations</h3><ul><li>Sales targets and conversion</li><li>Shift and coverage planning</li><li>Courier performance</li><li>Team leadership and KPIs</li></ul></div>
-      <div><h3>Systems</h3><ul><li>CRM design and rollout</li><li>Role-based access control</li><li>Call center telephony</li><li>Networking and troubleshooting</li></ul></div>
+      <div><h3>Systems</h3><ul><li>CRM design and rollout</li><li>Role-based access control</li><li>Call center automation</li><li>Networking and troubleshooting</li></ul></div>
       <div><h3>Data and selling</h3><ul><li>Advanced Excel and Sheets</li><li>Microsoft Power Query</li><li>Inventory systems</li><li>Consultative sales and retention</li></ul></div>
     </div>
     <div class="edu">
