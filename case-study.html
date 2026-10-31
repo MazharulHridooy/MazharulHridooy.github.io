@@ -4,9 +4,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>PROshanti CRM — the system behind a COD e-commerce operation</title>
-<meta name="description" content="How I built the in-house CRM running a Bangladeshi COD operation: 14-signal weighted fraud scoring, normalised courier integrations, and COD reconciliation.">
-<link rel="canonical" href="https://mazharulhridooy.github.io/case-study.html">
-<meta name="theme-color" content="#07070f">
+<meta name="description" content="How I built the in-house CRM running a Bangladeshi COD operation: 14-signal fraud scoring, normalised courier integrations, and COD reconciliation.">
+<link rel="canonical" href="https://mazharulhridoy.github.io/case-study.html">
+<meta name="theme-color" content="#f6f3ec" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#14161a" media="(prefers-color-scheme: dark)">
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self'; font-src 'self'; connect-src 'self'; base-uri 'self'; form-action 'self'">
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20viewBox%3D%270%200%20100%20100%27%3E%3Crect%20width%3D%27100%27%20height%3D%27100%27%20rx%3D%2720%27%20fill%3D%27%2307070f%27%2F%3E%3Ctext%20x%3D%2750%27%20y%3D%2768%27%20font-family%3D%27Georgia%2Cserif%27%20font-size%3D%2752%27%20font-weight%3D%27700%27%20fill%3D%27%23986ff7%27%20text-anchor%3D%27middle%27%3EMH%3C%2Ftext%3E%3C%2Fsvg%3E">
@@ -14,27 +15,27 @@
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="Mazharul Islam Hridoy">
 <meta property="og:title" content="PROshanti CRM — the system behind a COD e-commerce operation">
-<meta property="og:description" content="14-signal weighted fraud scoring with database-tunable thresholds, normalised courier integrations, and COD reconciliation. Built in-house, currently in UAT.">
-<meta property="og:url" content="https://mazharulhridooy.github.io/case-study.html">
-<meta property="og:image" content="https://mazharulhridooy.github.io/assets/og-case-study.png">
+<meta property="og:description" content="14-signal fraud scoring with database-tunable thresholds, normalised courier integrations, and COD reconciliation. Built in-house, currently in UAT.">
+<meta property="og:url" content="https://mazharulhridoy.github.io/case-study.html">
+<meta property="og:image" content="https://mazharulhridoy.github.io/assets/og-case-study-v2.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="PROshanti CRM — the system behind a COD e-commerce operation">
-<meta name="twitter:description" content="14-signal weighted fraud scoring, normalised courier integrations, COD reconciliation. Built in-house.">
-<meta name="twitter:image" content="https://mazharulhridooy.github.io/assets/og-case-study.png">
+<meta name="twitter:description" content="14-signal fraud scoring, normalised courier integrations, COD reconciliation. Built in-house.">
+<meta name="twitter:image" content="https://mazharulhridoy.github.io/assets/og-case-study-v2.png">
 
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "TechArticle",
-  "@id": "https://mazharulhridooy.github.io/case-study.html#article",
+  "@id": "https://mazharulhridoy.github.io/case-study.html#article",
   "headline": "PROshanti CRM — the system behind a COD e-commerce operation",
   "description": "How the in-house CRM running a Bangladeshi cash-on-delivery operation is built: weighted fraud scoring with database-tunable thresholds, a normalised courier adapter layer, and COD reconciliation.",
   "inLanguage": "en",
-  "url": "https://mazharulhridooy.github.io/case-study.html",
-  "image": "https://mazharulhridooy.github.io/assets/og-case-study.png",
-  "author": {"@type": "Person", "name": "Gazi Mazharul Islam Hridoy", "url": "https://mazharulhridooy.github.io/"},
+  "url": "https://mazharulhridoy.github.io/case-study.html",
+  "image": "https://mazharulhridoy.github.io/assets/og-case-study-v2.png",
+  "author": {"@type": "Person", "name": "Gazi Mazharul Islam Hridoy", "url": "https://mazharulhridoy.github.io/"},
   "publisher": {"@type": "Person", "name": "Gazi Mazharul Islam Hridoy"},
   "about": ["Cash on Delivery E-commerce", "Fraud Detection", "Logistics Integration", "Operations Engineering"],
   "proficiencyLevel": "Expert",
@@ -42,8 +43,8 @@
 }
 </script>
 <link rel="preload" href="fonts/ibm-plex-sans-400.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="fonts/space-grotesk-700.woff2" as="font" type="font/woff2" crossorigin>
-<style>@font-face{font-family:'IBM Plex Sans';font-style:normal;font-weight:400;font-display:swap;src:url('fonts/ibm-plex-sans-400.woff2') format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}@font-face{font-family:'IBM Plex Sans';font-style:normal;font-weight:700;font-display:swap;src:url('fonts/ibm-plex-sans-700.woff2') format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}@font-face{font-family:'IBM Plex Mono';font-style:normal;font-weight:400;font-display:swap;src:url('fonts/ibm-plex-mono-400.woff2') format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}@font-face{font-family:'IBM Plex Mono';font-style:normal;font-weight:700;font-display:swap;src:url('fonts/ibm-plex-mono-700.woff2') format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}@font-face{font-family:'Space Grotesk';font-style:normal;font-weight:700;font-display:swap;src:url('fonts/space-grotesk-700.woff2') format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}:root{--bg:#07070f;--surface:#0f0f1e;--surface-2:#151529;--border:rgba(170,170,215,0.15);--border-soft:rgba(170,170,215,0.07);--amber:#986ff7;--amber-dim:rgba(151,109,247,0.14);--teal:#22d3ee;--teal-dim:rgba(34,211,238,0.14);--text:#eef1f6;--text-dim:#96a1b3;--muted:#838d9d;--warn:#d9a44e;--warn-dim:rgba(217,164,78,0.13);--font-display:'Space Grotesk',sans-serif;--font-body:'IBM Plex Sans',-apple-system,sans-serif;--font-mono:'IBM Plex Mono',ui-monospace,monospace}*{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation-duration:0.001ms !important;animation-iteration-count:1 !important;transition-duration:0.001ms !important}}body{background:var(--bg);color:var(--text);font-family:var(--font-body);line-height:1.65;-webkit-font-smoothing:antialiased}a{color:var(--teal)}:focus-visible{outline:2px solid var(--teal);outline-offset:3px}.skip-link{position:absolute;left:-9999px;top:0;z-index:100;background:var(--amber);color:#160b2e;font-family:var(--font-mono);font-size:13px;font-weight:700;padding:12px 20px;border-radius:0 0 8px 0}.skip-link:focus{left:0}.wrap{max-width:780px;margin:0 auto;padding-inline:24px}nav.site-nav{border-bottom:1px solid var(--border-soft);background:var(--surface)}.nav-inner{max-width:780px;margin:0 auto;padding:0 24px;height:60px;display:flex;align-items:center;justify-content:space-between}.nav-brand{font-family:var(--font-display);font-weight:700;font-size:15px;display:flex;align-items:center;gap:8px;color:var(--text);text-decoration:none}.nav-brand .dot{width:7px;height:7px;border-radius:50%;background:var(--teal)}.nav-back{font-family:var(--font-mono);font-size:12px;color:var(--text-dim);text-decoration:none}.nav-back:hover{color:var(--amber)}header.cs-head{padding-block:64px 40px}.eyebrow{font-family:var(--font-mono);font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:var(--amber);margin-bottom:16px}h1{font-family:var(--font-display);font-weight:700;font-size:clamp(30px,5vw,44px);line-height:1.08;letter-spacing:-0.02em;margin-bottom:18px;text-wrap:balance}.standfirst{font-size:17.5px;color:var(--text-dim);max-width:62ch}.metastrip{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px;padding-top:22px;border-top:1px solid var(--border-soft)}.chip{font-family:var(--mono,var(--font-mono));font-size:11.5px;border:1px solid var(--border);border-radius:4px;padding:5px 10px;color:var(--text-dim)}.chip b{color:var(--text);font-weight:700}section{padding-block:34px;border-top:1px solid var(--border-soft)}h2{font-family:var(--font-display);font-weight:700;font-size:clamp(21px,3vw,26px);letter-spacing:-0.01em;margin-bottom:16px;text-wrap:balance}h3{font-family:var(--font-display);font-weight:700;font-size:16.5px;margin:26px 0 10px}p{margin-bottom:14px;color:var(--text-dim)}p strong{color:var(--text)}ul{margin:0 0 14px 20px;color:var(--text-dim)}li{margin-bottom:7px}.callout{background:var(--surface);border-left:3px solid var(--amber);border-radius:0 8px 8px 0;padding:16px 20px;margin-block:20px}.callout p:last-child{margin-bottom:0}.tablewrap{overflow-x:auto;border:1px solid var(--border);border-radius:10px;background:var(--surface)}table{border-collapse:collapse;width:100%;min-width:540px;font-size:14px}th,td{text-align:left;padding:11px 15px;border-bottom:1px solid var(--border-soft);vertical-align:top}thead th{background:var(--surface-2);font-family:var(--font-mono);font-size:11px;letter-spacing:0.07em;text-transform:uppercase;color:var(--muted);font-weight:700}tbody tr:last-child td{border-bottom:0}td.num{font-family:var(--font-mono);font-variant-numeric:tabular-nums;color:var(--text)}code{font-family:var(--font-mono);font-size:0.88em;background:var(--surface-2);padding:2px 6px;border-radius:4px;color:var(--teal)}.band{display:inline-block;font-family:var(--font-mono);font-size:11px;padding:2px 8px;border-radius:100px;font-weight:700}.band.g{background:rgba(34,211,238,0.14);color:var(--teal)}.band.y{background:var(--warn-dim);color:var(--warn)}.band.r{background:rgba(240,101,101,0.14);color:#f06565}.verify{display:inline-block;font-family:var(--font-mono);font-size:12px;font-weight:700;background:var(--warn-dim);color:var(--warn);border:1px dashed var(--warn);border-radius:5px;padding:2px 9px}.numbers-note{background:var(--warn-dim);border:1px dashed var(--warn);border-radius:10px;padding:16px 20px;margin-bottom:22px}.numbers-note p{color:var(--text);margin-bottom:0;font-size:14.5px}figure{margin:24px 0}figure svg{width:100%;height:auto;display:block}figcaption{font-family:var(--font-mono);font-size:11.5px;color:var(--muted);margin-top:10px;text-align:center}footer{border-top:1px solid var(--border-soft);padding-block:30px 50px;font-size:13px;color:var(--muted)}footer a{color:var(--teal)}</style>
+<link rel="preload" href="fonts/ibm-plex-sans-700.woff2" as="font" type="font/woff2" crossorigin>
+<style>@font-face{font-family:'IBM Plex Sans';font-style:normal;font-weight:400;font-display:swap;src:url('fonts/ibm-plex-sans-400.woff2') format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}@font-face{font-family:'IBM Plex Sans';font-style:normal;font-weight:700;font-display:swap;src:url('fonts/ibm-plex-sans-700.woff2') format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}@font-face{font-family:'IBM Plex Mono';font-style:normal;font-weight:400;font-display:swap;src:url('fonts/ibm-plex-mono-400.woff2') format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}@font-face{font-family:'IBM Plex Mono';font-style:normal;font-weight:700;font-display:swap;src:url('fonts/ibm-plex-mono-700.woff2') format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}:root{color-scheme:light dark;--bg:#f6f3ec;--surface:#fffdf8;--surface-2:#efebe1;--border:#d8d3c7;--border-soft:#e4dfd3;--amber:#b93c08;--teal:#0d6449;--teal-dim:#dcefe6;--text:#17191c;--text-dim:#494d53;--muted:#62666c;--warn:#7c5700;--warn-dim:#f6e7bf;--red:#b42318;--red-dim:#f9dfda;--on-accent:#fff;--font-display:'IBM Plex Sans',-apple-system,sans-serif;--font-body:'IBM Plex Sans',-apple-system,sans-serif;--font-mono:'IBM Plex Mono',ui-monospace,monospace}@media (prefers-color-scheme:dark){:root{--bg:#14161a;--surface:#1c1f24;--surface-2:#24282e;--border:#363a41;--border-soft:#2c3036;--amber:#f4905c;--teal:#5fd0a6;--teal-dim:#17352b;--text:#eeeae0;--text-dim:#bdbab1;--muted:#a3a29a;--warn:#e6bb56;--warn-dim:#3a2f12;--red:#f5877a;--red-dim:#40201c;--on-accent:#17191c}}*{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation-duration:0.001ms !important;animation-iteration-count:1 !important;transition-duration:0.001ms !important}}body{background:var(--bg);color:var(--text);font-family:var(--font-body);line-height:1.65;-webkit-font-smoothing:antialiased}a{color:var(--teal)}:focus-visible{outline:2px solid var(--teal);outline-offset:3px}.skip-link{position:absolute;left:-9999px;top:0;z-index:100;background:var(--amber);color:var(--on-accent);font-family:var(--font-mono);font-size:13px;font-weight:700;padding:12px 20px;border-radius:0 0 8px 0}.skip-link:focus{left:0}.wrap{max-width:780px;margin:0 auto;padding-inline:24px}nav.site-nav{border-bottom:1px solid var(--border-soft);background:var(--surface)}.nav-inner{max-width:780px;margin:0 auto;padding:0 24px;height:60px;display:flex;align-items:center;justify-content:space-between}.nav-brand{font-family:var(--font-display);font-weight:700;font-size:15px;display:flex;align-items:center;gap:8px;color:var(--text);text-decoration:none}.nav-brand .dot{width:7px;height:7px;border-radius:50%;background:var(--teal)}.nav-back{font-family:var(--font-mono);font-size:12px;color:var(--text-dim);text-decoration:none}.nav-back:hover{color:var(--amber)}header.cs-head{padding-block:64px 40px}.eyebrow{font-family:var(--font-mono);font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:var(--amber);margin-bottom:16px}h1{font-family:var(--font-display);font-weight:700;font-size:clamp(30px,5vw,44px);line-height:1.08;letter-spacing:-0.02em;margin-bottom:18px;text-wrap:balance}.standfirst{font-size:17.5px;color:var(--text-dim);max-width:62ch}.metastrip{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px;padding-top:22px;border-top:1px solid var(--border-soft)}.chip{font-family:var(--mono,var(--font-mono));font-size:11.5px;border:1px solid var(--border);border-radius:4px;padding:5px 10px;color:var(--text-dim)}.chip b{color:var(--text);font-weight:700}section{padding-block:34px;border-top:1px solid var(--border-soft)}h2{font-family:var(--font-display);font-weight:700;font-size:clamp(21px,3vw,26px);letter-spacing:-0.01em;margin-bottom:16px;text-wrap:balance}h3{font-family:var(--font-display);font-weight:700;font-size:16.5px;margin:26px 0 10px}p{margin-bottom:14px;color:var(--text-dim)}p strong{color:var(--text)}ul{margin:0 0 14px 20px;color:var(--text-dim)}li{margin-bottom:7px}.callout{background:var(--surface);border-left:3px solid var(--amber);border-radius:0 8px 8px 0;padding:16px 20px;margin-block:20px}.callout p:last-child{margin-bottom:0}.tablewrap{overflow-x:auto;border:1px solid var(--border);border-radius:10px;background:var(--surface)}table{border-collapse:collapse;width:100%;min-width:540px;font-size:14px}th,td{text-align:left;padding:11px 15px;border-bottom:1px solid var(--border-soft);vertical-align:top}thead th{background:var(--surface-2);font-family:var(--font-mono);font-size:11px;letter-spacing:0.07em;text-transform:uppercase;color:var(--muted);font-weight:700}tbody tr:last-child td{border-bottom:0}td.num{font-family:var(--font-mono);font-variant-numeric:tabular-nums;color:var(--text)}code{font-family:var(--font-mono);font-size:0.88em;background:var(--surface-2);padding:2px 6px;border-radius:4px;color:var(--teal)}.band{display:inline-block;font-family:var(--font-mono);font-size:11px;padding:2px 8px;border-radius:100px;font-weight:700}.band.g{background:var(--teal-dim);color:var(--teal)}.band.y{background:var(--warn-dim);color:var(--warn)}.band.r{background:var(--red-dim);color:var(--red)}.verify{display:inline-block;font-family:var(--font-mono);font-size:12px;font-weight:700;background:var(--warn-dim);color:var(--warn);border:1px dashed var(--warn);border-radius:5px;padding:2px 9px}.numbers-note{background:var(--warn-dim);border:1px dashed var(--warn);border-radius:10px;padding:16px 20px;margin-bottom:22px}.numbers-note p{color:var(--text);margin-bottom:0;font-size:14.5px}figure{margin:24px 0}table.compact{min-width:0}.diagram{overflow-x:auto}figure svg{width:100%;min-width:680px;height:auto;display:block}figcaption{font-family:var(--font-mono);font-size:11.5px;color:var(--muted);margin-top:10px;text-align:center}footer{border-top:1px solid var(--border-soft);padding-block:30px 50px;font-size:13px;color:var(--muted)}footer a{color:var(--teal)}</style>
 </head>
 <body>
 
@@ -51,7 +52,7 @@
 
 <nav class="site-nav">
   <div class="nav-inner">
-    <a href="index.html" class="nav-brand"><span class="dot"></span> Hridoy</a>
+    <a href="index.html" class="nav-brand">Mazharul Hridoy</a>
     <a href="index.html" class="nav-back">&larr; Back to profile</a>
   </div>
 </nav>
@@ -62,14 +63,18 @@
   <header class="cs-head">
     <p class="eyebrow">Case study · Operations engineering</p>
     <h1>The CRM behind a cash-on-delivery operation</h1>
-    <p class="standfirst">Cash on delivery means anyone can type a phone number and cost you a courier trip. No card, no deposit, no signal — until the parcel comes back. This is the system we built instead — currently in UAT — and the parts of it I got in the wrong order.</p>
+    <p class="standfirst">Cash on delivery means anyone can type a phone number and cost you a courier trip. No card, no deposit, no signal — until the parcel comes back. This is the system I built instead, now live in daily use, and the parts of it I got in the wrong order.</p>
     <div class="metastrip">
       <span class="chip"><b>NestJS</b> · API</span>
       <span class="chip"><b>Next.js</b> · web</span>
       <span class="chip"><b>PostgreSQL</b> + <b>Redis</b></span>
-      <span class="chip"><b>528</b> commits</span>
-      <span class="chip"><b>113</b> suites · <b>1,274</b> tests passing</span>
-        <span class="chip"><b>UAT</b> · not yet in production</span>
+      <span class="chip"><b>Asterisk</b> · phones</span>
+      <span class="chip"><b>900+</b> commits</span>
+      <span class="chip"><b>103</b> screens</span>
+      <span class="chip"><b>66</b> API controllers</span>
+      <span class="chip"><b>168</b> migrations</span>
+      <span class="chip"><b>264</b> test files</span>
+      <span class="chip"><b>Live</b> · in daily production use</span>
     </div>
   </header>
 
@@ -87,47 +92,48 @@
   <section>
     <h2>Architecture</h2>
     <figure>
+      <div class="diagram" tabindex="0" role="group" aria-label="Order pipeline diagram, scrolls sideways on small screens">
       <svg viewBox="0 0 760 240" role="img" aria-labelledby="archtitle archdesc" xmlns="http://www.w3.org/2000/svg">
         <title id="archtitle">PROshanti CRM order pipeline</title>
         <desc id="archdesc">An order enters intake, is scored by the fraud engine, then either auto-held or routed to one of three courier adapters. Delivery webhooks feed COD reconciliation and per-channel profit analytics.</desc>
         <defs>
           <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
-            <path d="M0,0 L10,5 L0,10 z" fill="#717c8e"/>
+            <path d="M0,0 L10,5 L0,10 z" fill="var(--muted)"/>
           </marker>
         </defs>
         <g font-family="IBM Plex Mono, monospace" font-size="11">
-          <rect x="8" y="92" width="104" height="52" rx="8" fill="#0f0f1e" stroke="rgba(170,170,215,0.25)"/>
-          <text x="60" y="114" fill="#eef1f6" text-anchor="middle">Order</text>
-          <text x="60" y="130" fill="#717c8e" text-anchor="middle">intake</text>
+          <rect x="8" y="92" width="104" height="52" rx="8" fill="var(--surface)" stroke="var(--border)"/>
+          <text x="60" y="114" fill="var(--text)" text-anchor="middle">Order</text>
+          <text x="60" y="130" fill="var(--muted)" text-anchor="middle">intake</text>
 
-          <rect x="160" y="82" width="132" height="72" rx="8" fill="#0f0f1e" stroke="#986ff7"/>
-          <text x="226" y="106" fill="#eef1f6" text-anchor="middle">Fraud engine</text>
-          <text x="226" y="122" fill="#986ff7" text-anchor="middle">14 signals</text>
-          <text x="226" y="138" fill="#717c8e" text-anchor="middle">fraud_rules</text>
+          <rect x="160" y="82" width="132" height="72" rx="8" fill="var(--surface)" stroke="var(--amber)"/>
+          <text x="226" y="106" fill="var(--text)" text-anchor="middle">Fraud engine</text>
+          <text x="226" y="122" fill="var(--amber)" text-anchor="middle">14 signals</text>
+          <text x="226" y="138" fill="var(--muted)" text-anchor="middle">fraud_rules</text>
 
-          <rect x="340" y="16" width="128" height="44" rx="8" fill="#0f0f1e" stroke="rgba(240,101,101,0.5)"/>
-          <text x="404" y="35" fill="#f06565" text-anchor="middle">auto-hold</text>
-          <text x="404" y="50" fill="#717c8e" text-anchor="middle">dispatch blocked</text>
+          <rect x="340" y="16" width="128" height="44" rx="8" fill="var(--surface)" stroke="var(--red)"/>
+          <text x="404" y="35" fill="var(--red)" text-anchor="middle">auto-hold</text>
+          <text x="404" y="50" fill="var(--muted)" text-anchor="middle">dispatch blocked</text>
 
-          <rect x="340" y="94" width="128" height="48" rx="8" fill="#0f0f1e" stroke="rgba(170,170,215,0.25)"/>
-          <text x="404" y="114" fill="#eef1f6" text-anchor="middle">Courier</text>
-          <text x="404" y="130" fill="#717c8e" text-anchor="middle">registry</text>
+          <rect x="340" y="94" width="128" height="48" rx="8" fill="var(--surface)" stroke="var(--border)"/>
+          <text x="404" y="114" fill="var(--text)" text-anchor="middle">Courier</text>
+          <text x="404" y="130" fill="var(--muted)" text-anchor="middle">registry</text>
 
-          <rect x="516" y="58" width="112" height="30" rx="6" fill="#0f0f1e" stroke="rgba(170,170,215,0.2)"/>
-          <text x="572" y="78" fill="#96a1b3" text-anchor="middle">Steadfast</text>
-          <rect x="516" y="98" width="112" height="30" rx="6" fill="#0f0f1e" stroke="rgba(170,170,215,0.2)"/>
-          <text x="572" y="118" fill="#96a1b3" text-anchor="middle">Pathao</text>
-          <rect x="516" y="138" width="112" height="30" rx="6" fill="#0f0f1e" stroke="rgba(170,170,215,0.2)"/>
-          <text x="572" y="158" fill="#96a1b3" text-anchor="middle">Paperfly</text>
+          <rect x="516" y="58" width="112" height="30" rx="6" fill="var(--surface)" stroke="var(--border)"/>
+          <text x="572" y="78" fill="var(--text-dim)" text-anchor="middle">Steadfast</text>
+          <rect x="516" y="98" width="112" height="30" rx="6" fill="var(--surface)" stroke="var(--border)"/>
+          <text x="572" y="118" fill="var(--text-dim)" text-anchor="middle">Pathao</text>
+          <rect x="516" y="138" width="112" height="30" rx="6" fill="var(--surface)" stroke="var(--border)"/>
+          <text x="572" y="158" fill="var(--text-dim)" text-anchor="middle">Paperfly</text>
 
-          <rect x="654" y="88" width="98" height="52" rx="8" fill="#0f0f1e" stroke="#22d3ee"/>
-          <text x="703" y="108" fill="#22d3ee" text-anchor="middle">COD</text>
-          <text x="703" y="124" fill="#717c8e" text-anchor="middle">reconcile</text>
+          <rect x="654" y="88" width="98" height="52" rx="8" fill="var(--surface)" stroke="var(--teal)"/>
+          <text x="703" y="108" fill="var(--teal)" text-anchor="middle">COD</text>
+          <text x="703" y="124" fill="var(--muted)" text-anchor="middle">reconcile</text>
 
-          <rect x="160" y="184" width="468" height="40" rx="8" fill="#0f0f1e" stroke="rgba(170,170,215,0.15)"/>
-          <text x="394" y="209" fill="#96a1b3" text-anchor="middle">Per-channel profit analytics  ·  channel-profit.service.ts</text>
+          <rect x="160" y="184" width="468" height="40" rx="8" fill="var(--surface)" stroke="var(--border)"/>
+          <text x="394" y="209" fill="var(--text-dim)" text-anchor="middle">Per-channel profit analytics  ·  channel-profit.service.ts</text>
 
-          <g stroke="#717c8e" fill="none" marker-end="url(#ar)">
+          <g stroke="var(--muted)" fill="none" marker-end="url(#ar)">
             <path d="M112,118 L156,118"/>
             <path d="M292,104 L300,104 L300,38 L336,38"/>
             <path d="M292,132 L300,132 L300,118 L336,118"/>
@@ -139,32 +145,33 @@
           </g>
         </g>
       </svg>
-      <figcaption>Order pipeline. Static diagram — no animation, so nothing changes under reduced-motion.</figcaption>
+      </div>
+      <figcaption>The order pipeline.</figcaption>
     </figure>
   </section>
 
   <section>
     <h2>Fraud scoring</h2>
-    <p><strong>It is not AI.</strong> It is arithmetic someone can audit, which matters more when it decides whether a real customer's order ships. Fourteen signals, each carrying fixed points and a weight. Scores band into three outcomes.</p>
+    <p><strong>It is not AI.</strong> It is arithmetic someone can audit, which matters more when it decides whether a real customer's order ships. Fourteen signals, each worth a fixed number of points. The points add up, cap at 100, and fall into one of three bands. <a href="index.html#try">Try it yourself.</a></p>
 
     <div class="tablewrap">
-      <table>
-        <thead><tr><th scope="col">Signal</th><th scope="col">Points</th><th scope="col">Weight</th></tr></thead>
+      <table class="compact">
+        <thead><tr><th scope="col">Signal</th><th scope="col">Points</th></tr></thead>
         <tbody>
-          <tr><td>Connection via known VPN or proxy</td><td class="num">40</td><td class="num">2.0</td></tr>
-          <tr><td>Temporary / disposable email</td><td class="num">35</td><td class="num">1.8</td></tr>
-          <tr><td>Same phone + same amount within 5 minutes</td><td class="num">30</td><td class="num">1.2</td></tr>
-          <tr><td>First-ever order over ৳5,000</td><td class="num">25</td><td class="num">1.0</td></tr>
-          <tr><td>More than 3 failed deliveries in 30 days</td><td class="num">20</td><td class="num">1.5</td></tr>
-          <tr><td>Same address used by other phone numbers</td><td class="num">20</td><td class="num">0.8</td></tr>
-          <tr><td>&gt;4 orders in 1 hour from same phone</td><td class="num">20</td><td class="num">1.3</td></tr>
-          <tr><td>&gt;8 orders in 24 hours from same IP</td><td class="num">20</td><td class="num">1.3</td></tr>
-          <tr><td>Order over 3× the customer's average</td><td class="num">15</td><td class="num">1.1</td></tr>
-          <tr><td>Suspicious phone pattern (sequential / repeated)</td><td class="num">15</td><td class="num">0.9</td></tr>
-          <tr><td>Placed between 11 PM and 6 AM</td><td class="num">10</td><td class="num">0.7</td></tr>
-          <tr><td>Delivery district missing / unverifiable</td><td class="num">10</td><td class="num">0.6</td></tr>
-          <tr><td>Bulk quantity (&gt;10) from a non-wholesale buyer</td><td class="num">10</td><td class="num">0.8</td></tr>
-          <tr><td>Customer created today + high-value order</td><td class="num">10</td><td class="num">1.0</td></tr>
+          <tr><td>Connection via known VPN or proxy</td><td class="num">40</td></tr>
+          <tr><td>Temporary / disposable email</td><td class="num">35</td></tr>
+          <tr><td>Same phone + same amount within 5 minutes</td><td class="num">30</td></tr>
+          <tr><td>First-ever order over ৳5,000</td><td class="num">25</td></tr>
+          <tr><td>More than 3 failed deliveries in 30 days</td><td class="num">20</td></tr>
+          <tr><td>Same address used by other phone numbers</td><td class="num">20</td></tr>
+          <tr><td>&gt;4 orders in 1 hour from same phone</td><td class="num">20</td></tr>
+          <tr><td>&gt;8 orders in 24 hours from same IP</td><td class="num">20</td></tr>
+          <tr><td>Order over 3× the customer's average</td><td class="num">15</td></tr>
+          <tr><td>Suspicious phone pattern (sequential / repeated)</td><td class="num">15</td></tr>
+          <tr><td>Placed between 11 PM and 6 AM</td><td class="num">10</td></tr>
+          <tr><td>Delivery district missing / unverifiable</td><td class="num">10</td></tr>
+          <tr><td>Bulk quantity (&gt;10) from a non-wholesale buyer</td><td class="num">10</td></tr>
+          <tr><td>Customer created today + high-value order</td><td class="num">10</td></tr>
         </tbody>
       </table>
     </div>
@@ -177,7 +184,7 @@
     </p>
 
     <div class="callout">
-      <p><strong>The design decision that matters:</strong> weights load from a <code>fraud_rules</code> table, falling back to the in-code constants for anything an admin has not overridden. A threshold can be retuned during a bad week without a deploy, and every check writes to <code>fraud_checks</code> with the signals that fired — so a held order can always be explained to the customer who placed it.</p>
+      <p><strong>The design decision that matters:</strong> points load from a <code>fraud_rules</code> table, falling back to the in-code constants for anything an admin has not overridden. A threshold can be retuned during a bad week without a deploy, and every check writes to <code>fraud_checks</code> with the signals that fired — so a held order can always be explained to the customer who placed it.</p>
     </div>
   </section>
 
@@ -198,12 +205,38 @@
     <p>The two least glamorous modules, and the ones that changed the most.</p>
     <p><strong>COD reconciliation</strong> exists because the courier's figure and ours disagreed more often than anyone wanted to admit. When money moves through a third party and comes back days later, "we think we were paid" is not an accounting position.</p>
     <p><strong>Per-channel profit</strong> exists because channel revenue without channel cost tells you nothing about which channel to spend more on. A channel can carry the highest revenue and the worst margin at the same time, and until the two sit in the same view you cannot see it.</p>
+    <p>One limit: product cost prices aren't loaded yet, so today this view shows what's left after delivery and ad spend. That isn't true profit, and it isn't labelled as profit until the costs are in.</p>
+  </section>
+
+  <section>
+    <h2>What came after launch</h2>
+    <p>Once real orders were flowing through it, the work moved from the order itself to the people handling it.</p>
+    <ul>
+      <li><strong>Call center.</strong> Agents call from the browser through our own Asterisk phone system, and the CRM keeps call logs and recordings against the customer.</li>
+      <li><strong>Courier tracking.</strong> Steadfast status changes reach the CRM through a signed webhook, so agents don't have to check the courier's dashboard.</li>
+      <li><strong>Customer chat.</strong> WhatsApp and Messenger conversations share one inbox.</li>
+      <li><strong>Team KPIs.</strong> Agents are scored on orders confirmed 10–40 days earlier, with delivered orders carrying the most weight. By then an order has either arrived or come back, so a confirmation that later fails doesn't count as a win.</li>
+      <li><strong>Access control.</strong> Sales staff see masked customer addresses. When that mask once got saved back over real addresses, we restored the affected records and made the save path refuse masked values.</li>
+    </ul>
+  </section>
+
+  <section id="production">
+    <h2>What only production could teach</h2>
+    <p>Tests can't show you how real people, real carriers and messy data break a system. These four problems only showed up once the system met real use.</p>
+    <h3>Calls kept dropping, and it wasn't the carrier</h3>
+    <p>Agents reported calls cutting off mid-conversation, and the obvious suspects were the carrier and the phone system's timers. The SIP logs showed the agent's registration disappearing in the same second the call ended. The real cause was the browser tab: a refresh or a reload after a deploy made the softphone library hang up. Now the page asks for confirmation before leaving during a call.</p>
+    <h3>The phone line ignored us because of one header</h3>
+    <p>Our carrier's switch didn't answer the new phone system. The first theories were an IP allowlist and port filtering. Sending the same test message with only the User-Agent changed disproved both: the switch silently dropped anything that identified itself as Asterisk. The fix was one line of configuration. Finding it took a controlled test.</p>
+    <h3>The dashboard was reporting too many orders</h3>
+    <p>Abandoned website checkouts were being saved as failed orders, and the daily KPI counted them as real ones. The number looked healthy, so nobody questioned it. I excluded them from anything labelled as orders, and I now check how a figure is built before trusting it.</p>
+    <h3>A privacy feature overwrote real data</h3>
+    <p>Sales staff see customer addresses masked. The customer page loaded that masked value, and pressing Save wrote it over the real address. We restored the affected records and made the save path refuse masked values, so the same mistake can't happen again.</p>
   </section>
 
   <section id="numbers">
     <h2>Verified in testing</h2>
     <div class="numbers-note">
-      <p><strong>PROshanti is in UAT, not production.</strong> Every figure below is either read from source or produced by running the test suite at commit <code>6232ead</code> — nothing here is a live operational metric, because none exist yet. Production numbers get published after launch.</p>
+      <p><strong>These are engineering figures, not business results.</strong> They were read from source or produced by the test suite at commit <code>6232ead</code>, the pre-launch baseline from September 2026.</p>
     </div>
 
     <div class="tablewrap">
@@ -217,14 +250,12 @@
           <tr><td>Courier layer cases passing</td><td class="num">140 / 140</td><td><code>jest --testPathPatterns=couriers</code></td></tr>
           <tr><td>Courier integrations registered</td><td class="num">3</td><td><code>couriers.module.ts</code></td></tr>
           <tr><td>Full API suite</td><td class="num">113 suites · 1,274 tests</td><td><code>npm test -w api</code>, exit 0</td></tr>
-          <tr><td>Commits</td><td class="num">528</td><td><code>git log</code></td></tr>
-          <tr><td>Operating day covered</td><td class="num">16.5 h · 2 shifts</td><td>roster</td></tr>
         </tbody>
       </table>
     </div>
 
     <h3>What the 55 fraud scenarios actually assert</h3>
-    <p>They are not a catch rate against real fraud — there is no real fraud yet to catch. They assert that a constructed order produces the band the specification says it should, which is the part that has to be right before any live number means anything.</p>
+    <p>They are not a catch rate against real fraud. They assert that a constructed order produces the band the specification says it should, which is the part that has to be right before any live number means anything.</p>
     <ul>
       <li>Every band boundary, individually: <code>0 → green</code>, <code>30 → green</code> (ceiling), <code>31 → yellow</code> (floor), <code>60 → yellow</code> (ceiling), <code>61 → red</code> (floor), and a combined score above 100 clamped to 100.</li>
       <li>Every signal's point value in isolation, including the cases where it must <em>not</em> fire — <code>new_high_value</code> stays silent at exactly ৳5,000 because the rule is <code>&gt; 5000</code>, and stays silent for a customer with prior orders.</li>
@@ -232,7 +263,7 @@
       <li>Failure modes: a broken order row returns null rather than throwing, and the rules loader <strong>fails open to the in-code constants</strong> when the <code>fraud_rules</code> table is unreachable — so a database problem cannot silently disable fraud scoring.</li>
     </ul>
     <div class="callout">
-      <p><strong>Cut rather than guessed.</strong> Fraud catch rate, reconciliation hours saved, delivery success percentage and orders per day are not on this page. They have no test-based source and no production to measure, so they are absent rather than estimated. They go up when there are real ones.</p>
+      <p><strong>Left out on purpose.</strong> Fraud catch rate, reconciliation hours saved and delivery success rate are not on this page. Estimates would be worse than nothing, and live figures belong to the business. They go up when they are measured properly and cleared to publish.</p>
     </div>
   </section>
 

@@ -1,58 +1,61 @@
 (function(){
-  // Live Dhaka clock + shift status (Asia/Dhaka = UTC+6, no DST)
+  // Shift status (Asia/Dhaka = UTC+6, no DST). Bar spans 08:00–23:00.
+  const WINDOW_START = 8*60, WINDOW_END = 23*60;
+  const MORNING_END = 17*60, DAY_START = 16*60+30;
   const clockEl = document.getElementById('clock');
-  const dateEl = document.getElementById('dateNow');
   const statusEl = document.getElementById('shiftStatus');
-  const covNow = document.getElementById('covNow');
+  const marker = document.getElementById('covNow');
 
-  function dhakaNow(){
-    const utc = new Date(Date.now());
-    const utcMs = utc.getTime() + (utc.getTimezoneOffset()*60000);
-    return new Date(utcMs + 6*3600000);
+  function pad(n){ return String(n).padStart(2,'0'); }
+
+  function shiftLabel(mins){
+    if(mins < WINDOW_START || mins >= WINDOW_END) return 'Floor closed. Morning shift starts at 08:00.';
+    if(mins >= DAY_START && mins < MORNING_END) return 'Shift handover';
+    return mins < DAY_START ? 'Morning shift on the floor' : 'Day shift on the floor';
   }
-  function pad(n){ return n.toString().padStart(2,'0'); }
 
   function tick(){
-    const d = dhakaNow();
-    const h = d.getHours(), m = d.getMinutes(), s = d.getSeconds();
-    clockEl.textContent = `Dhaka — ${pad(h)}:${pad(m)}:${pad(s)}`;
-    dateEl.textContent = d.toLocaleDateString('en-GB', {day:'2-digit', month:'short', year:'numeric'});
-
+    const d = new Date(Date.now() + 6*3600000);
+    const h = d.getUTCHours(), m = d.getUTCMinutes();
     const mins = h*60+m;
-    const morningStart = 8*60, morningEnd = 17*60;
-    const dayStart = 16*60+30, dayEnd = 23*60;
-    let status, cls;
-    if(mins >= dayStart && mins < dayEnd){ status = 'Day Shift Active'; cls='on'; }
-    else if(mins >= morningStart && mins < morningEnd){ status = 'Morning Shift Active'; cls='on'; }
-    else { status = 'Off-Shift'; cls='off'; }
-    statusEl.textContent = status;
-    statusEl.className = 'val ' + cls;
-
-    // coverage bar spans 08:00–23:00 (900 min window)
-    const winStart = 8*60, winEnd = 23*60, winLen = winEnd-winStart;
-    let pct = ((mins - winStart) / winLen) * 100;
-    pct = Math.max(0, Math.min(100, pct));
-    covNow.style.left = pct + '%';
+    clockEl.textContent = `DHAKA ${pad(h)}:${pad(m)}`;
+    statusEl.textContent = shiftLabel(mins);
+    const open = mins >= WINDOW_START && mins < WINDOW_END;
+    marker.hidden = !open;
+    if(open) marker.style.left = ((mins-WINDOW_START)/(WINDOW_END-WINDOW_START)*100) + '%';
   }
   tick();
-  setInterval(tick, 1000);
+  setInterval(tick, 30000);
 
-  // timeline reveal
-  const items = document.querySelectorAll('.t-item');
-  const obs = new IntersectionObserver((entries)=>{
-    entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in-view'); obs.unobserve(e.target);} });
-  }, {threshold:0.15});
-  items.forEach(i=>obs.observe(i));
+  // Fraud demo. Mirrors FraudService: additive points capped at 100; 31 = yellow, 61 = red.
+  const BANDS = {
+    green: ['Green: ships', 'No action. The order moves on to a courier.'],
+    yellow: ['Yellow: review', 'Flagged. An agent checks it before it goes any further.'],
+    red: ['Red: held', 'Held automatically. Managers are notified and dispatch is blocked.']
+  };
+  const boxes = [...document.querySelectorAll('#signals input')];
+  const presets = document.getElementById('presets');
+  const verdict = document.getElementById('verdict');
 
-  // mobile nav toggle
-  const burger = document.getElementById('navBurger');
-  const navLinks = document.getElementById('navLinks');
-  burger.addEventListener('click', ()=>{
-    const isOpen = navLinks.classList.toggle('open');
-    burger.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+  function bandFor(score){ return score >= 61 ? 'red' : score >= 31 ? 'yellow' : 'green'; }
+
+  function render(){
+    const score = Math.min(100, boxes.reduce((sum,b)=> sum + (b.checked ? Number(b.value) : 0), 0));
+    const band = bandFor(score);
+    verdict.dataset.band = band;
+    document.getElementById('score').textContent = score;
+    document.getElementById('band').textContent = BANDS[band][0];
+    document.getElementById('action').textContent = BANDS[band][1];
+  }
+  boxes.forEach(b=>b.addEventListener('change', render));
+
+  presets.hidden = false;
+  presets.addEventListener('click', e=>{
+    const set = e.target.dataset && e.target.dataset.set;
+    if(set === undefined) return;
+    const wanted = set ? set.split(',').map(Number) : [];
+    boxes.forEach((b,i)=>{ b.checked = wanted.includes(i); });
+    render();
   });
-  navLinks.querySelectorAll('a').forEach(a=>a.addEventListener('click', ()=>{
-    navLinks.classList.remove('open');
-    burger.setAttribute('aria-expanded','false');
-  }));
+  render();
 })();

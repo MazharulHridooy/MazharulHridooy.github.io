@@ -1,10 +1,10 @@
-# mazharulhridooy.github.io
+# mazharulhridoy.github.io
 
-[![CI](https://github.com/MazharulHridooy/MazharulHridooy.github.io/actions/workflows/ci.yml/badge.svg)](https://github.com/MazharulHridooy/MazharulHridooy.github.io/actions/workflows/ci.yml)
+[![CI](https://github.com/MazharulHridoy/mazharulhridoy.github.io/actions/workflows/ci.yml/badge.svg)](https://github.com/MazharulHridoy/mazharulhridoy.github.io/actions/workflows/ci.yml)
 ![Lighthouse mobile](https://img.shields.io/badge/lighthouse_mobile-100%2F100%2F100%2F100-brightgreen)
 ![axe](https://img.shields.io/badge/axe--core-0_violations-brightgreen)
 ![html-validate](https://img.shields.io/badge/html--validate-0_errors-brightgreen)
-![page weight](https://img.shields.io/badge/page_weight-137_KB-brightgreen)
+![page weight](https://img.shields.io/badge/page_weight-110_KB-brightgreen)
 
 Personal site and case study for Gazi Mazharul Islam Hridoy — TL & Sales
 Operations Manager, Dhaka. Static, no framework, no build step.
@@ -13,23 +13,24 @@ Operations Manager, Dhaka. Static, no framework, no build step.
 
 | Path | What |
 |---|---|
-| `index.html` | Profile, live shift console, experience timeline, skills radar |
+| `index.html` | Profile, shift schedule, fraud engine demo, experience |
 | `case-study.html` | PROshanti CRM — fraud scoring, courier layer, reconciliation |
+| `cv.pdf` | Print stylesheet of `index.html`, regenerated with `tools/build-cv.sh` |
 
 ## Measured state
 
 All figures below were produced by the commands in [Gates](#gates), against
-`tools/serve-gzip.py`, on 2026-09-15.
+`tools/serve-gzip.py`, on 2026-10-31.
 
 | Check | Result |
 |---|---|
 | Lighthouse mobile — `index.html` | **100 / 100 / 100 / 100** |
 | Lighthouse mobile — `case-study.html` | **100 / 100 / 100 / 100** |
-| axe-core 4.13.0 | **0 violations** (26 + 41 passes) |
+| axe-core 4.14.0 | **0 violations** |
 | html-validate | **0 errors** |
-| Page weight (gzipped + fonts) | **137 KB** — 8.3 KB html, 1.0 KB js, 128 KB woff2 |
+| Page weight (gzipped + fonts) | **110 KB** — 8.3 KB html, 1.2 KB js, 101 KB woff2 |
 | CLS | **0** · TBT **0 ms** |
-| LCP | **1.65 s** under simulated slow 4G — target ≤ 1.7 s, audit score 1.0 |
+| LCP | **1.5 s** under simulated slow 4G — target ≤ 1.7 s |
 | Third-party hosts | **0** |
 
 Artifacts live in [`docs/audit/`](docs/audit/): Lighthouse HTML reports, the
@@ -93,9 +94,10 @@ current setup silently handles.
 ## Conventions
 
 - No build step. Edit `index.html` / `case-study.html` directly.
-- CSS is minified inline; keep the source readable in the diff and minify on the
-  way in, or re-run the minifier if you make a large change.
+- CSS is inline in each page.
 - Fonts are self-hosted latin woff2 subsets in `fonts/`. Only weights 400 and
   700 ship — no rule in either page declares 500 or 600.
+- If you edit experience or contact details, re-run `tools/build-cv.sh`.
+- If you change an OG image, change its filename too. LinkedIn caches by URL.
 - `[VERIFY]` tokens in `case-study.html` mark outcome metrics that live in the
   production database. They must reach zero before merging to `main`.

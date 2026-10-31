@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://mazharulhridooy.github.io/sitemap.xml
+Sitemap: https://mazharulhridoy.github.io/sitemap.xml
