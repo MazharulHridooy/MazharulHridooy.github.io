@@ -1,10 +1,11 @@
 (function(){
+  const reduceMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const byId = id => document.getElementById(id);
+
   // Shift status (Asia/Dhaka = UTC+6, no DST). Bar spans 08:00–23:00.
   const WINDOW_START = 8*60, WINDOW_END = 23*60;
   const MORNING_END = 17*60, DAY_START = 16*60+30;
-  const clockEl = document.getElementById('clock');
-  const statusEl = document.getElementById('shiftStatus');
-  const marker = document.getElementById('covNow');
+  const marker = byId('covNow');
 
   function pad(n){ return String(n).padStart(2,'0'); }
 
@@ -18,14 +19,14 @@
     const d = new Date(Date.now() + 6*3600000);
     const h = d.getUTCHours(), m = d.getUTCMinutes();
     const mins = h*60+m;
-    clockEl.textContent = `DHAKA ${pad(h)}:${pad(m)}`;
-    statusEl.textContent = shiftLabel(mins);
+    byId('clock').textContent = `Dhaka ${pad(h)}:${pad(m)}:${pad(d.getUTCSeconds())}`;
+    byId('shiftStatus').textContent = shiftLabel(mins);
     const open = mins >= WINDOW_START && mins < WINDOW_END;
     marker.hidden = !open;
     if(open) marker.style.left = ((mins-WINDOW_START)/(WINDOW_END-WINDOW_START)*100) + '%';
   }
   tick();
-  setInterval(tick, 30000);
+  setInterval(tick, 1000);
 
   // Fraud demo. Mirrors FraudService: additive points capped at 100; 31 = yellow, 61 = red.
   const BANDS = {
@@ -34,8 +35,8 @@
     red: ['Red: held', 'Held automatically. Managers are notified and dispatch is blocked.']
   };
   const boxes = [...document.querySelectorAll('#signals input')];
-  const presets = document.getElementById('presets');
-  const verdict = document.getElementById('verdict');
+  const presets = byId('presets');
+  const verdict = byId('verdict');
 
   function bandFor(score){ return score >= 61 ? 'red' : score >= 31 ? 'yellow' : 'green'; }
 
@@ -43,9 +44,10 @@
     const score = Math.min(100, boxes.reduce((sum,b)=> sum + (b.checked ? Number(b.value) : 0), 0));
     const band = bandFor(score);
     verdict.dataset.band = band;
-    document.getElementById('score').textContent = score;
-    document.getElementById('band').textContent = BANDS[band][0];
-    document.getElementById('action').textContent = BANDS[band][1];
+    verdict.style.setProperty('--pct', score);
+    byId('score').textContent = score;
+    byId('band').textContent = BANDS[band][0];
+    byId('action').textContent = BANDS[band][1];
   }
   boxes.forEach(b=>b.addEventListener('change', render));
 
@@ -70,11 +72,10 @@
     { name: 'Tanvir K.', order: '#1049', total: '৳1,290', district: 'Sylhet', reason: 'new', tries: 0 },
     { name: 'Mitu R.', order: '#1037', total: '৳760', district: 'Barishal', reason: 'retry', tries: 1 }
   ];
-  const dialer = document.getElementById('dialer');
-  const outs = document.getElementById('outs');
-  const again = document.getElementById('again');
-  const byId = id => document.getElementById(id);
-  let calls, tally;
+  const dialer = byId('dialer');
+  const outs = byId('outs');
+  const again = byId('again');
+  let calls, tally, callStart;
 
   function ordered(list){ return [...list].sort((a,b)=> RANK[a.reason] - RANK[b.reason]); }
 
@@ -82,6 +83,8 @@
     const c = calls[0];
     outs.hidden = !c;
     again.hidden = Boolean(c);
+    dialer.classList.toggle('ringing', Boolean(c));
+    callStart = Date.now();
     byId('callReason').textContent = c ? REASON[c.reason] : 'QUEUE CLEAR';
     byId('callTries').textContent = c ? `Try ${c.tries+1} of ${MAX_TRIES} today` : '';
     byId('callName').textContent = c ? c.name : 'Nobody left to call';
@@ -153,6 +156,10 @@
   });
   dialer.hidden = false;
   startQueue();
+  setInterval(()=>{
+    const s = Math.floor((Date.now()-callStart)/1000);
+    byId('callTimer').textContent = calls.length ? `${pad(Math.floor(s/60))}:${pad(s%60)}` : '--:--';
+  }, 1000);
 
   // Marks the section in view in the nav.
   const navLinks = [...document.querySelectorAll('.nav-links a')];
@@ -165,4 +172,43 @@
     });
   }, { rootMargin:'-30% 0px -65% 0px' });
   navLinks.forEach(a=>{ const t = document.querySelector(a.getAttribute('href')); if(t) spy.observe(t); });
+
+  // Spotlight that follows the pointer across cards.
+  document.addEventListener('pointermove', e=>{
+    const card = e.target.closest && e.target.closest('.card');
+    if(!card) return;
+    const r = card.getBoundingClientRect();
+    card.style.setProperty('--x', `${e.clientX-r.left}px`);
+    card.style.setProperty('--y', `${e.clientY-r.top}px`);
+  }, { passive:true });
+
+  if(reduceMotion) return;
+
+  // Reveal on scroll and count up. The real values stay in the HTML, so nothing depends on this running.
+  const seen = new IntersectionObserver(entries=>{
+    entries.filter(en=>en.isIntersecting).forEach(en=>{
+      en.target.classList.add('in');
+      seen.unobserve(en.target);
+    });
+  }, { rootMargin:'0px 0px -8% 0px' });
+  document.querySelectorAll('.reveal').forEach(el=>{
+    el.classList.add('pre');
+    seen.observe(el);
+  });
+
+  const COUNT_MS = 900;
+  const counter = new IntersectionObserver(entries=>{
+    entries.filter(en=>en.isIntersecting).forEach(en=>{
+      counter.unobserve(en.target);
+      const el = en.target, end = Number(el.dataset.count), suffix = el.dataset.suffix || '';
+      const t0 = performance.now();
+      const step = now=>{
+        const p = Math.min(1,(now-t0)/COUNT_MS);
+        el.textContent = Math.round(end*(1-Math.pow(1-p,3))) + suffix;
+        if(p < 1) requestAnimationFrame(step);
+      };
+      requestAnimationFrame(step);
+    });
+  });
+  document.querySelectorAll('[data-count]').forEach(el=>counter.observe(el));
 })();
